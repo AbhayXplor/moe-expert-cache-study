@@ -1,0 +1,802 @@
+[
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 21.139,
+          "prefill_tps": 10.5,
+          "n": 192,
+          "wall_s": 14.75,
+          "sha": "80b60eb2f139",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification that conflates **latency** with **bandwidth**, and often misinterprets the specific metrics used in high-performance computing benchmarks. In reality, the cost difference is not uniform; it depends heavily on whether you are measuring **latency** (time to fetch a single byte) or **bandwidth** (throughput of large sequential reads).\n\nHowever, the core intuition\u2014that **GPU memory is vastly superior for serving large model weights during inference/training**\u2014is correct. Below is a concrete, thorough explanation of the actual performance disparities, the underlying hardware reasons, and the implications for Mixture-of-Experts (MoE) architectures.\n\n---\n\n### 1. Clarifying the \"80x\" Claim: Latency vs. Bandwidth\n\nThe \"80x\" figure likely",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 890,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 21.329,
+          "prefill_tps": 15.8,
+          "n": 192,
+          "wall_s": 13.13,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 23.178,
+          "prefill_tps": 20.4,
+          "n": 192,
+          "wall_s": 12.45,
+          "sha": "aed1c04cc4c5",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and listening. `nmap` also provides initial OS/service",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 716,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 18.595,
+          "prefill_tps": 98.9,
+          "n": 8,
+          "wall_s": 49.25,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 22.885,
+          "prefill_tps": 15.4,
+          "n": 192,
+          "wall_s": 12.38,
+          "sha": "80b60eb2f139",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification that conflates **latency** with **bandwidth**, and often misinterprets the specific metrics used in high-performance computing benchmarks. In reality, the cost difference is not uniform; it depends heavily on whether you are measuring **latency** (time to fetch a single byte) or **bandwidth** (throughput of large sequential reads).\n\nHowever, the core intuition\u2014that **GPU memory is vastly superior for serving large model weights during inference/training**\u2014is correct. Below is a concrete, thorough explanation of the actual performance disparities, the underlying hardware reasons, and the implications for Mixture-of-Experts (MoE) architectures.\n\n---\n\n### 1. Clarifying the \"80x\" Claim: Latency vs. Bandwidth\n\nThe \"80x\" figure likely",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 890,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 22.724,
+          "prefill_tps": 17.5,
+          "n": 192,
+          "wall_s": 12.16,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 20.845,
+          "prefill_tps": 21.2,
+          "n": 192,
+          "wall_s": 13.23,
+          "sha": "aed1c04cc4c5",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and listening. `nmap` also provides initial OS/service",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 716,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 19.423,
+          "prefill_tps": 102.8,
+          "n": 8,
+          "wall_s": 47.48,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 8.26,
+    "vram_used_mib": 3187,
+    "ram_used_gib": 28.34,
+    "vram_mib_rep0": 3215,
+    "ram_gib_rep0": 44.66,
+    "vram_mib_rep1": 3215,
+    "ram_gib_rep1": 44.28,
+    "ram_peak_gib": 44.86,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cache-2048",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "2048"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 8.16,
+          "prefill_tps": 10.7,
+          "n": 192,
+          "wall_s": 29.03,
+          "sha": "e72ccc972431",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a slight oversimplification of the underlying physics and architecture, but it captures the **effective cost** in the context of Large Language Model (LLM) inference, specifically for **Mixture-of-Experts (MoE)** models.\n\nTo understand why this disparity exists and what it implies for MoE weight placement, we must break down the **memory bandwidth**, **latency**, **architecture**, and **compute-bound vs. memory-bound** nature of inference.\n\n---\n\n### 1. The Core Metric: Memory Bandwidth and Latency\n\nThe \"cost\" of reading data is primarily determined by **memory bandwidth** (bytes per second) and **latency** (time to first byte). In AI inference, especially for MoE, the bottleneck is often **memory bandwidth**, not compute.\n\n#### A.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 859,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 6.916,
+          "prefill_tps": 16.8,
+          "n": 192,
+          "wall_s": 31.56,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 8.278,
+          "prefill_tps": 17.3,
+          "n": 192,
+          "wall_s": 28.04,
+          "sha": "8ab76b91ba49",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 --open <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and accepting connections. This ensures the service is active",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 730,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 5.288,
+          "prefill_tps": 95.8,
+          "n": 8,
+          "wall_s": 51.8,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 8.547,
+          "prefill_tps": 14.9,
+          "n": 192,
+          "wall_s": 26.58,
+          "sha": "e72ccc972431",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a slight oversimplification of the underlying physics and architecture, but it captures the **effective cost** in the context of Large Language Model (LLM) inference, specifically for **Mixture-of-Experts (MoE)** models.\n\nTo understand why this disparity exists and what it implies for MoE weight placement, we must break down the **memory bandwidth**, **latency**, **architecture**, and **compute-bound vs. memory-bound** nature of inference.\n\n---\n\n### 1. The Core Metric: Memory Bandwidth and Latency\n\nThe \"cost\" of reading data is primarily determined by **memory bandwidth** (bytes per second) and **latency** (time to first byte). In AI inference, especially for MoE, the bottleneck is often **memory bandwidth**, not compute.\n\n#### A.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 859,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 7.595,
+          "prefill_tps": 17.8,
+          "n": 192,
+          "wall_s": 28.86,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 8.7,
+          "prefill_tps": 18.6,
+          "n": 192,
+          "wall_s": 26.6,
+          "sha": "8ab76b91ba49",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 --open <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and accepting connections. This ensures the service is active",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 730,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 5.271,
+          "prefill_tps": 90.8,
+          "n": 8,
+          "wall_s": 54.66,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 7.63,
+    "vram_used_mib": 5237,
+    "ram_used_gib": 28.36,
+    "vram_mib_rep0": 5281,
+    "ram_gib_rep0": 43.94,
+    "vram_mib_rep1": 5283,
+    "ram_gib_rep1": 44.06,
+    "ram_peak_gib": 44.18,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 19.938,
+          "prefill_tps": 11.0,
+          "n": 192,
+          "wall_s": 15.04,
+          "sha": "80b60eb2f139",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification that conflates **latency** with **bandwidth**, and often misinterprets the specific metrics used in high-performance computing benchmarks. In reality, the cost difference is not uniform; it depends heavily on whether you are measuring **latency** (time to fetch a single byte) or **bandwidth** (throughput of large sequential reads).\n\nHowever, the core intuition\u2014that **GPU memory is vastly superior for serving large model weights during inference/training**\u2014is correct. Below is a concrete, thorough explanation of the actual performance disparities, the underlying hardware reasons, and the implications for Mixture-of-Experts (MoE) architectures.\n\n---\n\n### 1. Clarifying the \"80x\" Claim: Latency vs. Bandwidth\n\nThe \"80x\" figure likely",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 890,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 21.107,
+          "prefill_tps": 15.0,
+          "n": 192,
+          "wall_s": 13.45,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 22.506,
+          "prefill_tps": 18.6,
+          "n": 192,
+          "wall_s": 13.07,
+          "sha": "aed1c04cc4c5",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and listening. `nmap` also provides initial OS/service",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 716,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 17.175,
+          "prefill_tps": 99.6,
+          "n": 8,
+          "wall_s": 48.96,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 23.101,
+          "prefill_tps": 15.9,
+          "n": 192,
+          "wall_s": 12.16,
+          "sha": "80b60eb2f139",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification that conflates **latency** with **bandwidth**, and often misinterprets the specific metrics used in high-performance computing benchmarks. In reality, the cost difference is not uniform; it depends heavily on whether you are measuring **latency** (time to fetch a single byte) or **bandwidth** (throughput of large sequential reads).\n\nHowever, the core intuition\u2014that **GPU memory is vastly superior for serving large model weights during inference/training**\u2014is correct. Below is a concrete, thorough explanation of the actual performance disparities, the underlying hardware reasons, and the implications for Mixture-of-Experts (MoE) architectures.\n\n---\n\n### 1. Clarifying the \"80x\" Claim: Latency vs. Bandwidth\n\nThe \"80x\" figure likely",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 890,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 22.833,
+          "prefill_tps": 17.7,
+          "n": 192,
+          "wall_s": 12.09,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 23.475,
+          "prefill_tps": 20.6,
+          "n": 192,
+          "wall_s": 12.32,
+          "sha": "aed1c04cc4c5",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and listening. `nmap` also provides initial OS/service",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 716,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 16.917,
+          "prefill_tps": 100.8,
+          "n": 8,
+          "wall_s": 48.47,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 7.64,
+    "vram_used_mib": 3187,
+    "ram_used_gib": 27.94,
+    "vram_mib_rep0": 3215,
+    "ram_gib_rep0": 44.01,
+    "vram_mib_rep1": 3215,
+    "ram_gib_rep1": 43.79,
+    "ram_peak_gib": 44.29,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cache-2048",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "2048"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 7.646,
+          "prefill_tps": 10.3,
+          "n": 192,
+          "wall_s": 30.83,
+          "sha": "e72ccc972431",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a slight oversimplification of the underlying physics and architecture, but it captures the **effective cost** in the context of Large Language Model (LLM) inference, specifically for **Mixture-of-Experts (MoE)** models.\n\nTo understand why this disparity exists and what it implies for MoE weight placement, we must break down the **memory bandwidth**, **latency**, **architecture**, and **compute-bound vs. memory-bound** nature of inference.\n\n---\n\n### 1. The Core Metric: Memory Bandwidth and Latency\n\nThe \"cost\" of reading data is primarily determined by **memory bandwidth** (bytes per second) and **latency** (time to first byte). In AI inference, especially for MoE, the bottleneck is often **memory bandwidth**, not compute.\n\n#### A.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 859,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 7.13,
+          "prefill_tps": 14.4,
+          "n": 192,
+          "wall_s": 31.4,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 8.166,
+          "prefill_tps": 17.5,
+          "n": 192,
+          "wall_s": 28.32,
+          "sha": "8ab76b91ba49",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 --open <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and accepting connections. This ensures the service is active",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 730,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 5.25,
+          "prefill_tps": 90.1,
+          "n": 8,
+          "wall_s": 54.98,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 8.6,
+          "prefill_tps": 14.7,
+          "n": 192,
+          "wall_s": 26.48,
+          "sha": "e72ccc972431",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a slight oversimplification of the underlying physics and architecture, but it captures the **effective cost** in the context of Large Language Model (LLM) inference, specifically for **Mixture-of-Experts (MoE)** models.\n\nTo understand why this disparity exists and what it implies for MoE weight placement, we must break down the **memory bandwidth**, **latency**, **architecture**, and **compute-bound vs. memory-bound** nature of inference.\n\n---\n\n### 1. The Core Metric: Memory Bandwidth and Latency\n\nThe \"cost\" of reading data is primarily determined by **memory bandwidth** (bytes per second) and **latency** (time to first byte). In AI inference, especially for MoE, the bottleneck is often **memory bandwidth**, not compute.\n\n#### A.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 859,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 7.623,
+          "prefill_tps": 16.8,
+          "n": 192,
+          "wall_s": 28.98,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 8.643,
+          "prefill_tps": 18.3,
+          "n": 192,
+          "wall_s": 26.81,
+          "sha": "8ab76b91ba49",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 --open <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and accepting connections. This ensures the service is active",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 730,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 5.651,
+          "prefill_tps": 89.1,
+          "n": 8,
+          "wall_s": 55.56,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 8.64,
+    "vram_used_mib": 5237,
+    "ram_used_gib": 27.88,
+    "vram_mib_rep0": 5281,
+    "ram_gib_rep0": 44.0,
+    "vram_mib_rep1": 5283,
+    "ram_gib_rep1": 43.95,
+    "ram_peak_gib": 44.23,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 20.792,
+          "prefill_tps": 10.8,
+          "n": 192,
+          "wall_s": 14.79,
+          "sha": "80b60eb2f139",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification that conflates **latency** with **bandwidth**, and often misinterprets the specific metrics used in high-performance computing benchmarks. In reality, the cost difference is not uniform; it depends heavily on whether you are measuring **latency** (time to fetch a single byte) or **bandwidth** (throughput of large sequential reads).\n\nHowever, the core intuition\u2014that **GPU memory is vastly superior for serving large model weights during inference/training**\u2014is correct. Below is a concrete, thorough explanation of the actual performance disparities, the underlying hardware reasons, and the implications for Mixture-of-Experts (MoE) architectures.\n\n---\n\n### 1. Clarifying the \"80x\" Claim: Latency vs. Bandwidth\n\nThe \"80x\" figure likely",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 890,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 21.066,
+          "prefill_tps": 16.6,
+          "n": 192,
+          "wall_s": 13.06,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 22.621,
+          "prefill_tps": 18.6,
+          "n": 192,
+          "wall_s": 13.06,
+          "sha": "aed1c04cc4c5",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and listening. `nmap` also provides initial OS/service",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 716,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 16.64,
+          "prefill_tps": 98.5,
+          "n": 8,
+          "wall_s": 49.54,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 22.604,
+          "prefill_tps": 15.2,
+          "n": 192,
+          "wall_s": 12.54,
+          "sha": "80b60eb2f139",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification that conflates **latency** with **bandwidth**, and often misinterprets the specific metrics used in high-performance computing benchmarks. In reality, the cost difference is not uniform; it depends heavily on whether you are measuring **latency** (time to fetch a single byte) or **bandwidth** (throughput of large sequential reads).\n\nHowever, the core intuition\u2014that **GPU memory is vastly superior for serving large model weights during inference/training**\u2014is correct. Below is a concrete, thorough explanation of the actual performance disparities, the underlying hardware reasons, and the implications for Mixture-of-Experts (MoE) architectures.\n\n---\n\n### 1. Clarifying the \"80x\" Claim: Latency vs. Bandwidth\n\nThe \"80x\" figure likely",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 890,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 23.715,
+          "prefill_tps": 17.9,
+          "n": 192,
+          "wall_s": 11.73,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 22.958,
+          "prefill_tps": 21.0,
+          "n": 192,
+          "wall_s": 12.45,
+          "sha": "aed1c04cc4c5",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and listening. `nmap` also provides initial OS/service",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 716,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 19.953,
+          "prefill_tps": 100.9,
+          "n": 8,
+          "wall_s": 48.38,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 6.65,
+    "vram_used_mib": 3187,
+    "ram_used_gib": 27.82,
+    "vram_mib_rep0": 3215,
+    "ram_gib_rep0": 43.88,
+    "vram_mib_rep1": 3215,
+    "ram_gib_rep1": 44.01,
+    "ram_peak_gib": 44.23,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cache-4096",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "4096"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 11.921,
+          "prefill_tps": 10.2,
+          "n": 192,
+          "wall_s": 21.92,
+          "sha": "e72ccc972431",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a slight oversimplification of the underlying physics and architecture, but it captures the **effective cost** in the context of Large Language Model (LLM) inference, specifically for **Mixture-of-Experts (MoE)** models.\n\nTo understand why this disparity exists and what it implies for MoE weight placement, we must break down the **memory bandwidth**, **latency**, **architecture**, and **compute-bound vs. memory-bound** nature of inference.\n\n---\n\n### 1. The Core Metric: Memory Bandwidth and Latency\n\nThe \"cost\" of reading data is primarily determined by **memory bandwidth** (bytes per second) and **latency** (time to first byte). In AI inference, especially for MoE, the bottleneck is often **memory bandwidth**, not compute.\n\n#### A.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 859,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 10.245,
+          "prefill_tps": 16.2,
+          "n": 192,
+          "wall_s": 22.73,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 12.084,
+          "prefill_tps": 18.4,
+          "n": 192,
+          "wall_s": 20.48,
+          "sha": "8ab76b91ba49",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 --open <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and accepting connections. This ensures the service is active",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 730,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 7.324,
+          "prefill_tps": 76.5,
+          "n": 8,
+          "wall_s": 64.12,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 13.548,
+          "prefill_tps": 18.8,
+          "n": 192,
+          "wall_s": 17.44,
+          "sha": "e72ccc972431",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a slight oversimplification of the underlying physics and architecture, but it captures the **effective cost** in the context of Large Language Model (LLM) inference, specifically for **Mixture-of-Experts (MoE)** models.\n\nTo understand why this disparity exists and what it implies for MoE weight placement, we must break down the **memory bandwidth**, **latency**, **architecture**, and **compute-bound vs. memory-bound** nature of inference.\n\n---\n\n### 1. The Core Metric: Memory Bandwidth and Latency\n\nThe \"cost\" of reading data is primarily determined by **memory bandwidth** (bytes per second) and **latency** (time to first byte). In AI inference, especially for MoE, the bottleneck is often **memory bandwidth**, not compute.\n\n#### A.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 859,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 10.919,
+          "prefill_tps": 19.0,
+          "n": 192,
+          "wall_s": 21.0,
+          "sha": "c6782c681aad",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute latency statistics from a list of (timestamp, latency_ms) samples.\n\n    Args:\n        samples: A list of tuples, where each tuple contains:\n            - timestamp (float): The time at which the sample was recorded.\n            - latency_ms (float): The latency in milliseconds.\n\n    Returns:\n        A dictionary with the following keys:\n            - 'p50': The 50th percentile (median) of all latencies.\n            - 'p95': The 95th percentile of all latencies.\n            - 'p99': The 99th percentile of all latencies.\n            - 'rolling_avg_60s': The average latency over the most recent 60-second window",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 761,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 12.749,
+          "prefill_tps": 20.1,
+          "n": 192,
+          "wall_s": 19.26,
+          "sha": "8ab76b91ba49",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Port Status**\n- **Tool:** `nc` (netcat) or `nmap`\n- **Command:**\n  ```bash\n  nc -zv <target_ip> 8443\n  # or\n  nmap -p 8443 --open <target_ip>\n  ```\n- **Reasoning:** Confirm the port is open and accepting connections. This ensures the service is active",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 730,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 15.657,
+          "prefill_tps": 244.5,
+          "n": 8,
+          "wall_s": 20.32,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 7.64,
+    "vram_used_mib": 7283,
+    "ram_used_gib": 27.95,
+    "vram_mib_rep0": 7327,
+    "ram_gib_rep0": 44.01,
+    "vram_mib_rep1": 7329,
+    "ram_gib_rep1": 44.01,
+    "ram_peak_gib": 44.21,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.01.074.164 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  }
+]

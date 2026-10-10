@@ -1,0 +1,322 @@
+[
+  {
+    "config": "ub2048",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 28.468,
+          "prefill_tps": 18.1,
+          "n": 256,
+          "wall_s": 12.28,
+          "sha": "6fb9d1933b5b",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification and, in most modern high-performance contexts, **factually incorrect** if interpreted as raw bandwidth or latency. However, the *spirit* of the question touches on a real and critical architectural constraint: **the massive disparity in effective bandwidth and latency between CPU RAM and GPU HBM/VRAM**, which has profound implications for Mixture-of-Experts (MoE) models.\n\nLet\u2019s clarify the facts, then explain why the *effective cost* of accessing weights from CPU RAM is prohibitively high for MoE inference, and what this implies for weight placement.\n\n---\n\n### 1. Clarifying the \"80x\" Claim: Bandwidth vs. Latency\n\n#### A. Raw Bandwidth Comparison\n- **CPU RAM (DDR4/DDR5):**  \n  - DDR4-3200 dual-channel: ~50 GB/s  \n  - DDR5-6400 dual-channel: ~100 GB/s  \n  - High-end server DDR5 (8-channel): ~200\u2013300 GB/s  \n- **GPU Memory (HBM2",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 988,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 31.155,
+          "prefill_tps": 32.8,
+          "n": 256,
+          "wall_s": 10.23,
+          "sha": "88e5c899402a",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 percentiles and a rolling 60-second average latency.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples, where timestamp is\n                 in seconds (float) and latency_ms is the latency in milliseconds\n                 (float). The samples should be sorted by timestamp in ascending\n                 order.\n\n    Returns:\n        A dictionary with keys 'p50', 'p95', 'p99', and 'rolling_avg_60s'.\n        - p50, p95, p99: The 50th, 95th, and 99th percentile latencies in ms.\n        - rolling_avg_60s: The average latency over the last 60 seconds of\n          the sample window (i.e., samples within the last 60 seconds from\n          the maximum timestamp).\n\n    Raises:\n        ValueError: If the samples list is empty.\n    \"\"\"\n    if not samples:\n        raise",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 950,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 32.436,
+          "prefill_tps": 42.6,
+          "n": 256,
+          "wall_s": 9.91,
+          "sha": "3ae0c91a6d6f",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption, triggering alarms, or violating authorization boundaries.\n\n---\n\n### **Phase 0: Pre-Engagement & Safety Checks**\n**Goal:** Ensure testing is authorized, scoped, and safe.\n\n1. **Verify Authorization**\n   - Confirm written permission to test TCP 8443.\n   - Confirm scope: Is this a production, staging, or test environment?\n   - Confirm rules of engagement: No DoS, no exploitation, no data exfiltration.\n\n2. **Baseline Network Connectivity**\n   ```bash\n   ping -c 3 <target_host>\n   nc -zv <target_host> 8443\n   ```\n   - **Reasoning:** Confirms host is reachable and port is open. `nc -zv` is non-intrusive.\n\n---\n\n### **Phase 1: Passive Fingerprinting (TLS Handshake Analysis)**\n**Goal:** Extract TLS-specific fingerprints without sending malicious",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 989,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 28.5,
+          "prefill_tps": 508.9,
+          "n": 8,
+          "wall_s": 9.79,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.59,
+    "vram_used_mib": 3425,
+    "ram_used_gib": 31.11,
+    "vram_mib_rep0": 3477,
+    "ram_gib_rep0": 46.16,
+    "ram_peak_gib": 46.08,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "mtp",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "draft-mtp",
+      "--spec-draft-n-max",
+      "2"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 34.3,
+          "prefill_tps": 17.0,
+          "n": 256,
+          "wall_s": 10.97,
+          "sha": "c5460fd5a186",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification and, in most modern high-performance contexts, **factually incorrect** if interpreted as raw bandwidth or latency. However, the *spirit* of the question touches on a real and critical architectural constraint: **the massive disparity in effective bandwidth and latency between CPU RAM and GPU HBM/VRAM**, which has profound implications for Mixture-of-Experts (MoE) models.\n\nLet\u2019s clarify the facts, then explain why the *effective cost* of accessing weights from RAM vs. GPU memory is so dramatically different in practice, and what this implies for MoE weight placement.\n\n---\n\n### 1. Clarifying the Numbers: Bandwidth and Latency\n\n#### A. Raw Bandwidth Comparison\n- **System RAM (DDR4/DDR5):**\n  - DDR4-3200: ~25.6 GB/s per channel (dual-channel ~51.2 GB/s).\n  - DDR5-6400: ~51.2 GB/s per channel (dual-channel ~102.4 GB/s).\n  - Modern servers may",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1001,
+          "draft_n": 210,
+          "draft_n_accepted": 149
+        },
+        "code": {
+          "decode_tps": 41.115,
+          "prefill_tps": 34.2,
+          "n": 256,
+          "wall_s": 8.15,
+          "sha": "88e5c899402a",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 percentiles and a rolling 60-second average latency.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples, where timestamp is\n                 in seconds (float) and latency_ms is the latency in milliseconds\n                 (float). The samples should be sorted by timestamp in ascending\n                 order.\n\n    Returns:\n        A dictionary with keys 'p50', 'p95', 'p99', and 'rolling_avg_60s'.\n        - p50, p95, p99: The 50th, 95th, and 99th percentile latencies in ms.\n        - rolling_avg_60s: The average latency over the last 60 seconds of\n          the sample window (i.e., samples within the last 60 seconds from\n          the maximum timestamp).\n\n    Raises:\n        ValueError: If the samples list is empty.\n    \"\"\"\n    if not samples:\n        raise",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 950,
+          "draft_n": 188,
+          "draft_n_accepted": 161
+        },
+        "security": {
+          "decode_tps": 35.506,
+          "prefill_tps": 41.5,
+          "n": 256,
+          "wall_s": 9.27,
+          "sha": "f900e6162d43",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Basic TLS Handshake**\n**Tool:** `openssl s_client`  \n**Command:**\n```bash\nopenssl s_client -connect <target_ip>:8443 -servername <target_hostname_if_known> -tls1_2\n```\n**Reasoning:**\n- Confirms the service is reachable and responds to TLS.\n- `-tls1_2` forces a specific protocol version to avoid negotiation issues.\n- `-servername` sends SNI (Server Name Indication), which is critical for virtual-hosted TLS services.\n- **Safe:** This is a standard, non-intrusive handshake. It does not send HTTP requests or exploit attempts.\n\n**What to Observe:**\n- TLS version negotiated.\n- Cipher",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1063,
+          "draft_n": 212,
+          "draft_n_accepted": 148
+        },
+        "longprefill": {
+          "decode_tps": 33.123,
+          "prefill_tps": 471.1,
+          "n": 8,
+          "wall_s": 10.52,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 6,
+          "draft_n_accepted": 6
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 8.6,
+    "vram_used_mib": 4037,
+    "ram_used_gib": 29.28,
+    "vram_mib_rep0": 4137,
+    "ram_gib_rep0": 47.04,
+    "ram_peak_gib": 46.9,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "mtp",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "draft-mtp",
+      "--spec-draft-n-max",
+      "2"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 21.176,
+          "prefill_tps": 17.3,
+          "n": 256,
+          "wall_s": 15.55,
+          "sha": "c5460fd5a186",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification and, in most modern high-performance contexts, **factually incorrect** if interpreted as raw bandwidth or latency. However, the *spirit* of the question touches on a real and critical architectural constraint: **the massive disparity in effective bandwidth and latency between CPU RAM and GPU HBM/VRAM**, which has profound implications for Mixture-of-Experts (MoE) models.\n\nLet\u2019s clarify the facts, then explain why the *effective cost* of accessing weights from RAM vs. GPU memory is so dramatically different in practice, and what this implies for MoE weight placement.\n\n---\n\n### 1. Clarifying the Numbers: Bandwidth and Latency\n\n#### A. Raw Bandwidth Comparison\n- **System RAM (DDR4/DDR5):**\n  - DDR4-3200: ~25.6 GB/s per channel (dual-channel ~51.2 GB/s).\n  - DDR5-6400: ~51.2 GB/s per channel (dual-channel ~102.4 GB/s).\n  - Modern servers may",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1001,
+          "draft_n": 210,
+          "draft_n_accepted": 149
+        },
+        "code": {
+          "decode_tps": 25.809,
+          "prefill_tps": 31.5,
+          "n": 256,
+          "wall_s": 12.03,
+          "sha": "88e5c899402a",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 percentiles and a rolling 60-second average latency.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples, where timestamp is\n                 in seconds (float) and latency_ms is the latency in milliseconds\n                 (float). The samples should be sorted by timestamp in ascending\n                 order.\n\n    Returns:\n        A dictionary with keys 'p50', 'p95', 'p99', and 'rolling_avg_60s'.\n        - p50, p95, p99: The 50th, 95th, and 99th percentile latencies in ms.\n        - rolling_avg_60s: The average latency over the last 60 seconds of\n          the sample window (i.e., samples within the last 60 seconds from\n          the maximum timestamp).\n\n    Raises:\n        ValueError: If the samples list is empty.\n    \"\"\"\n    if not samples:\n        raise",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 950,
+          "draft_n": 188,
+          "draft_n_accepted": 161
+        },
+        "security": {
+          "decode_tps": 24.646,
+          "prefill_tps": 40.3,
+          "n": 256,
+          "wall_s": 12.51,
+          "sha": "f900e6162d43",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Basic TLS Handshake**\n**Tool:** `openssl s_client`  \n**Command:**\n```bash\nopenssl s_client -connect <target_ip>:8443 -servername <target_hostname_if_known> -tls1_2\n```\n**Reasoning:**\n- Confirms the service is reachable and responds to TLS.\n- `-tls1_2` forces a specific protocol version to avoid negotiation issues.\n- `-servername` sends SNI (Server Name Indication), which is critical for virtual-hosted TLS services.\n- **Safe:** This is a standard, non-intrusive handshake. It does not send HTTP requests or exploit attempts.\n\n**What to Observe:**\n- TLS version negotiated.\n- Cipher",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1063,
+          "draft_n": 212,
+          "draft_n_accepted": 148
+        },
+        "longprefill": {
+          "decode_tps": 28.497,
+          "prefill_tps": 485.9,
+          "n": 8,
+          "wall_s": 10.28,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 6,
+          "draft_n_accepted": 6
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 7.62,
+    "vram_used_mib": 4037,
+    "ram_used_gib": 31.22,
+    "vram_mib_rep0": 4137,
+    "ram_gib_rep0": 47.93,
+    "ram_peak_gib": 47.8,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ub2048",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 19.154,
+          "prefill_tps": 18.9,
+          "n": 256,
+          "wall_s": 16.49,
+          "sha": "6fb9d1933b5b",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification and, in most modern high-performance contexts, **factually incorrect** if interpreted as raw bandwidth or latency. However, the *spirit* of the question touches on a real and critical architectural constraint: **the massive disparity in effective bandwidth and latency between CPU RAM and GPU HBM/VRAM**, which has profound implications for Mixture-of-Experts (MoE) models.\n\nLet\u2019s clarify the facts, then explain why the *effective cost* of accessing weights from CPU RAM is prohibitively high for MoE inference, and what this implies for weight placement.\n\n---\n\n### 1. Clarifying the \"80x\" Claim: Bandwidth vs. Latency\n\n#### A. Raw Bandwidth Comparison\n- **CPU RAM (DDR4/DDR5):**  \n  - DDR4-3200 dual-channel: ~50 GB/s  \n  - DDR5-6400 dual-channel: ~100 GB/s  \n  - High-end server DDR5 (8-channel): ~200\u2013300 GB/s  \n- **GPU Memory (HBM2",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 988,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 21.488,
+          "prefill_tps": 29.1,
+          "n": 256,
+          "wall_s": 14.18,
+          "sha": "88e5c899402a",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 percentiles and a rolling 60-second average latency.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples, where timestamp is\n                 in seconds (float) and latency_ms is the latency in milliseconds\n                 (float). The samples should be sorted by timestamp in ascending\n                 order.\n\n    Returns:\n        A dictionary with keys 'p50', 'p95', 'p99', and 'rolling_avg_60s'.\n        - p50, p95, p99: The 50th, 95th, and 99th percentile latencies in ms.\n        - rolling_avg_60s: The average latency over the last 60 seconds of\n          the sample window (i.e., samples within the last 60 seconds from\n          the maximum timestamp).\n\n    Raises:\n        ValueError: If the samples list is empty.\n    \"\"\"\n    if not samples:\n        raise",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 950,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 20.091,
+          "prefill_tps": 34.1,
+          "n": 256,
+          "wall_s": 15.25,
+          "sha": "3ae0c91a6d6f",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption, triggering alarms, or violating authorization boundaries.\n\n---\n\n### **Phase 0: Pre-Engagement & Safety Checks**\n**Goal:** Ensure testing is authorized, scoped, and safe.\n\n1. **Verify Authorization**\n   - Confirm written permission to test TCP 8443.\n   - Confirm scope: Is this a production, staging, or test environment?\n   - Confirm rules of engagement: No DoS, no exploitation, no data exfiltration.\n\n2. **Baseline Network Connectivity**\n   ```bash\n   ping -c 3 <target_host>\n   nc -zv <target_host> 8443\n   ```\n   - **Reasoning:** Confirms host is reachable and port is open. `nc -zv` is non-intrusive.\n\n---\n\n### **Phase 1: Passive Fingerprinting (TLS Handshake Analysis)**\n**Goal:** Extract TLS-specific fingerprints without sending malicious",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 989,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 27.423,
+          "prefill_tps": 482.7,
+          "n": 8,
+          "wall_s": 10.42,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.57,
+    "vram_used_mib": 3425,
+    "ram_used_gib": 31.13,
+    "vram_mib_rep0": 3477,
+    "ram_gib_rep0": 48.23,
+    "ram_peak_gib": 48.23,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

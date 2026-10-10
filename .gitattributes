@@ -1,0 +1,5 @@
+# Normalize line endings so the repository is identical on every platform.
+* text=auto eol=lf
+*.png binary
+*.gguf binary
+*.jpg binary

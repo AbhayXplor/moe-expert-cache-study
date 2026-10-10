@@ -1,0 +1,682 @@
+[
+  {
+    "config": "cache-4608",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "4608"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 28.916,
+          "prefill_tps": 12.5,
+          "n": 192,
+          "wall_s": 11.42,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 33.175,
+          "prefill_tps": 51.0,
+          "n": 192,
+          "wall_s": 7.11,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 37.998,
+          "prefill_tps": 81.9,
+          "n": 192,
+          "wall_s": 6.13,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 22.901,
+          "prefill_tps": 477.8,
+          "n": 8,
+          "wall_s": 10.5,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 36.782,
+          "prefill_tps": 81.0,
+          "n": 192,
+          "wall_s": 6.08,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 36.366,
+          "prefill_tps": 66.6,
+          "n": 192,
+          "wall_s": 6.29,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 43.388,
+          "prefill_tps": 96.2,
+          "n": 192,
+          "wall_s": 5.4,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 22.342,
+          "prefill_tps": 519.3,
+          "n": 8,
+          "wall_s": 9.72,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 3.61,
+    "vram_used_mib": 7129,
+    "ram_used_gib": 25.57,
+    "vram_mib_rep0": 7183,
+    "ram_gib_rep0": 32.13,
+    "vram_mib_rep1": 7183,
+    "ram_gib_rep1": 32.21,
+    "ram_peak_gib": 32.43,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.622.536 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "cache-4864",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "4864"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 29.931,
+          "prefill_tps": 12.8,
+          "n": 192,
+          "wall_s": 11.08,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 37.235,
+          "prefill_tps": 56.7,
+          "n": 192,
+          "wall_s": 6.41,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 38.763,
+          "prefill_tps": 87.6,
+          "n": 192,
+          "wall_s": 5.96,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 24.6,
+          "prefill_tps": 501.9,
+          "n": 8,
+          "wall_s": 10.0,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 40.642,
+          "prefill_tps": 77.6,
+          "n": 192,
+          "wall_s": 5.69,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 39.753,
+          "prefill_tps": 81.1,
+          "n": 192,
+          "wall_s": 5.64,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 39.367,
+          "prefill_tps": 102.8,
+          "n": 192,
+          "wall_s": 5.78,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 21.971,
+          "prefill_tps": 495.9,
+          "n": 8,
+          "wall_s": 10.22,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 3.57,
+    "vram_used_mib": 7383,
+    "ram_used_gib": 25.84,
+    "vram_mib_rep0": 7437,
+    "ram_gib_rep0": 32.26,
+    "vram_mib_rep1": 7437,
+    "ram_gib_rep1": 32.67,
+    "ram_peak_gib": 32.69,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.617.998 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "cache-4608",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "4608"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 30.376,
+          "prefill_tps": 11.7,
+          "n": 192,
+          "wall_s": 11.45,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 35.357,
+          "prefill_tps": 57.6,
+          "n": 192,
+          "wall_s": 6.64,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 37.745,
+          "prefill_tps": 93.8,
+          "n": 192,
+          "wall_s": 6.04,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 22.161,
+          "prefill_tps": 496.0,
+          "n": 8,
+          "wall_s": 10.16,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 39.816,
+          "prefill_tps": 75.3,
+          "n": 192,
+          "wall_s": 5.78,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 38.37,
+          "prefill_tps": 75.6,
+          "n": 192,
+          "wall_s": 5.89,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 38.434,
+          "prefill_tps": 96.9,
+          "n": 192,
+          "wall_s": 5.97,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 20.083,
+          "prefill_tps": 451.2,
+          "n": 8,
+          "wall_s": 11.23,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 3.53,
+    "vram_used_mib": 7129,
+    "ram_used_gib": 26.17,
+    "vram_mib_rep0": 7183,
+    "ram_gib_rep0": 32.35,
+    "vram_mib_rep1": 7183,
+    "ram_gib_rep1": 32.6,
+    "ram_peak_gib": 32.64,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.700.461 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "cache-4864",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "4864"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 30.222,
+          "prefill_tps": 13.5,
+          "n": 192,
+          "wall_s": 10.78,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 35.855,
+          "prefill_tps": 64.9,
+          "n": 192,
+          "wall_s": 6.42,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 38.126,
+          "prefill_tps": 83.7,
+          "n": 192,
+          "wall_s": 6.09,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 20.282,
+          "prefill_tps": 493.4,
+          "n": 8,
+          "wall_s": 10.23,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 39.905,
+          "prefill_tps": 72.6,
+          "n": 192,
+          "wall_s": 5.81,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 38.743,
+          "prefill_tps": 82.8,
+          "n": 192,
+          "wall_s": 5.79,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 38.091,
+          "prefill_tps": 97.6,
+          "n": 192,
+          "wall_s": 5.99,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 20.155,
+          "prefill_tps": 489.8,
+          "n": 8,
+          "wall_s": 10.38,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 3.55,
+    "vram_used_mib": 7383,
+    "ram_used_gib": 26.12,
+    "vram_mib_rep0": 7437,
+    "ram_gib_rep0": 32.24,
+    "vram_mib_rep1": 7437,
+    "ram_gib_rep1": 32.18,
+    "ram_peak_gib": 32.45,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.674.425 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "cache-5120",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "5120"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 42.965,
+          "prefill_tps": 39.3,
+          "n": 192,
+          "wall_s": 5.99,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 49.971,
+          "prefill_tps": 126.3,
+          "n": 192,
+          "wall_s": 4.39,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 50.463,
+          "prefill_tps": 150.6,
+          "n": 192,
+          "wall_s": 4.4,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 36.711,
+          "prefill_tps": 723.2,
+          "n": 8,
+          "wall_s": 6.93,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 51.24,
+          "prefill_tps": 122.0,
+          "n": 192,
+          "wall_s": 4.31,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 50.216,
+          "prefill_tps": 128.7,
+          "n": 192,
+          "wall_s": 4.35,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 50.005,
+          "prefill_tps": 150.0,
+          "n": 192,
+          "wall_s": 4.46,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 36.053,
+          "prefill_tps": 693.2,
+          "n": 8,
+          "wall_s": 7.26,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 3.58,
+    "vram_used_mib": 7639,
+    "ram_used_gib": 26.44,
+    "vram_mib_rep0": 7693,
+    "ram_gib_rep0": 32.46,
+    "vram_mib_rep1": 7693,
+    "ram_gib_rep1": 32.58,
+    "ram_peak_gib": 32.68,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.621.882 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  }
+]

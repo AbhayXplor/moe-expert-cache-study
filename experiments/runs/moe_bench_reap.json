@@ -1,0 +1,802 @@
+[
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 18.097,
+          "prefill_tps": 35.8,
+          "n": 192,
+          "wall_s": 12.26,
+          "sha": "6c2019c8be08",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency characteristics**, and **data movement costs**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the ~80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory (VRAM):** Modern high-end GPUs (e.g., NVIDIA A100, H100, or consumer RTX 4090) use H100/A100-style architectures with **HBM (High Bandwidth Memory)** or GDDR6/H100 memory controllers. These are designed for massive parallel throughput.\n    *   **Bandwidth:** ~2,000\u20132,500 GB/s (for A",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 738,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 11.077,
+          "prefill_tps": 47.3,
+          "n": 192,
+          "wall_s": 18.72,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 11.772,
+          "prefill_tps": 59.7,
+          "n": 192,
+          "wall_s": 17.73,
+          "sha": "346b38bc9bed",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443) with an **unrecognized issuer**, there is a high probability this is a **rogue service**, a **man-in-the-middle (MITM) interception**, or a **misconfigured internal service**.\n\n**\u26a0 Safety & Ethical Warning:**\n*   **Do not** blindly trust the certificate.\n*   **Do not** inject malicious payloads into the TLS handshake unless explicitly authorized for penetration testing.\n*   **Do not** disable system-wide TLS verification.\n*   **Goal:** Identify the service silently and safely.\n\n---\n\n## \ud83e\udded Step-by-Step Methodology\n\n### Phase 1: Passive Reconnaissance & Context Gathering\n**Goal:** Understand the service\u2019s role without interacting with it.\n\n#### 1.1 Check Local",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 793,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 16.902,
+          "prefill_tps": 412.9,
+          "n": 8,
+          "wall_s": 12.25,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 12.614,
+          "prefill_tps": 50.0,
+          "n": 192,
+          "wall_s": 16.52,
+          "sha": "6c2019c8be08",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency characteristics**, and **data movement costs**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the ~80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory (VRAM):** Modern high-end GPUs (e.g., NVIDIA A100, H100, or consumer RTX 4090) use H100/A100-style architectures with **HBM (High Bandwidth Memory)** or GDDR6/H100 memory controllers. These are designed for massive parallel throughput.\n    *   **Bandwidth:** ~2,000\u20132,500 GB/s (for A",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 738,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 11.585,
+          "prefill_tps": 49.7,
+          "n": 192,
+          "wall_s": 17.85,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 10.909,
+          "prefill_tps": 62.5,
+          "n": 192,
+          "wall_s": 19.0,
+          "sha": "346b38bc9bed",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443) with an **unrecognized issuer**, there is a high probability this is a **rogue service**, a **man-in-the-middle (MITM) interception**, or a **misconfigured internal service**.\n\n**\u26a0 Safety & Ethical Warning:**\n*   **Do not** blindly trust the certificate.\n*   **Do not** inject malicious payloads into the TLS handshake unless explicitly authorized for penetration testing.\n*   **Do not** disable system-wide TLS verification.\n*   **Goal:** Identify the service silently and safely.\n\n---\n\n## \ud83e\udded Step-by-Step Methodology\n\n### Phase 1: Passive Reconnaissance & Context Gathering\n**Goal:** Understand the service\u2019s role without interacting with it.\n\n#### 1.1 Check Local",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 793,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 16.995,
+          "prefill_tps": 409.2,
+          "n": 8,
+          "wall_s": 12.44,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 6.63,
+    "vram_used_mib": 2517,
+    "ram_used_gib": 27.05,
+    "vram_mib_rep0": 2547,
+    "ram_gib_rep0": 31.32,
+    "vram_mib_rep1": 2547,
+    "ram_gib_rep1": 30.81,
+    "ram_peak_gib": 32.52,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ncmoe-20",
+    "extra": [
+      "--n-cpu-moe",
+      "20"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 19.225,
+          "prefill_tps": 61.6,
+          "n": 192,
+          "wall_s": 10.93,
+          "sha": "ccdf309a2f6b",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency characteristics**, and **data movement costs**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the ~80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory (VRAM):** Modern high-end GPUs (e.g., NVIDIA A100, H100, or consumer RTX 4090) use H100/A100-style architectures with **HBM (High Bandwidth Memory)** or similar optimized memory controllers. They achieve memory bandwidths of **~2\u20133 TB/s** (terabytes per second) for large, contiguous transfers.\n*   **System RAM (DRAM):** CPUs access system",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 795,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 18.982,
+          "prefill_tps": 88.1,
+          "n": 192,
+          "wall_s": 10.88,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 18.546,
+          "prefill_tps": 113.8,
+          "n": 192,
+          "wall_s": 11.1,
+          "sha": "346b38bc9bed",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443) with an **unrecognized issuer**, there is a high probability this is a **rogue service**, a **man-in-the-middle (MITM) interception**, or a **misconfigured internal service**.\n\n**\u26a0 Safety & Ethical Warning:**\n*   **Do not** blindly trust the certificate.\n*   **Do not** inject malicious payloads into the TLS handshake unless explicitly authorized for penetration testing.\n*   **Do not** disable system-wide TLS verification.\n*   **Goal:** Identify the service silently and safely.\n\n---\n\n## \ud83e\udded Step-by-Step Methodology\n\n### Phase 1: Passive Reconnaissance & Context Gathering\n**Goal:** Understand the service\u2019s role without interacting with it.\n\n#### 1.1 Check Local",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 793,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 20.547,
+          "prefill_tps": 761.5,
+          "n": 8,
+          "wall_s": 6.77,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 16.806,
+          "prefill_tps": 84.2,
+          "n": 192,
+          "wall_s": 12.26,
+          "sha": "ccdf309a2f6b",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency characteristics**, and **data movement costs**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the ~80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory (VRAM):** Modern high-end GPUs (e.g., NVIDIA A100, H100, or consumer RTX 4090) use H100/A100-style architectures with **HBM (High Bandwidth Memory)** or similar optimized memory controllers. They achieve memory bandwidths of **~2\u20133 TB/s** (terabytes per second) for large, contiguous transfers.\n*   **System RAM (DRAM):** CPUs access system",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 795,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 17.3,
+          "prefill_tps": 90.9,
+          "n": 192,
+          "wall_s": 11.81,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 18.214,
+          "prefill_tps": 108.2,
+          "n": 192,
+          "wall_s": 11.43,
+          "sha": "346b38bc9bed",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443) with an **unrecognized issuer**, there is a high probability this is a **rogue service**, a **man-in-the-middle (MITM) interception**, or a **misconfigured internal service**.\n\n**\u26a0 Safety & Ethical Warning:**\n*   **Do not** blindly trust the certificate.\n*   **Do not** inject malicious payloads into the TLS handshake unless explicitly authorized for penetration testing.\n*   **Do not** disable system-wide TLS verification.\n*   **Goal:** Identify the service silently and safely.\n\n---\n\n## \ud83e\udded Step-by-Step Methodology\n\n### Phase 1: Passive Reconnaissance & Context Gathering\n**Goal:** Understand the service\u2019s role without interacting with it.\n\n#### 1.1 Check Local",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 793,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 27.756,
+          "prefill_tps": 771.2,
+          "n": 8,
+          "wall_s": 6.73,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 4.62,
+    "vram_used_mib": 6275,
+    "ram_used_gib": 27.59,
+    "vram_mib_rep0": 6303,
+    "ram_gib_rep0": 31.05,
+    "vram_mib_rep1": 6303,
+    "ram_gib_rep1": 30.84,
+    "ram_peak_gib": 31.5,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.740.035 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 11.6,
+          "prefill_tps": 32.4,
+          "n": 192,
+          "wall_s": 18.32,
+          "sha": "6c2019c8be08",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency characteristics**, and **data movement costs**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the ~80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory (VRAM):** Modern high-end GPUs (e.g., NVIDIA A100, H100, or consumer RTX 4090) use H100/A100-style architectures with **HBM (High Bandwidth Memory)** or GDDR6/H100 memory controllers. These are designed for massive parallel throughput.\n    *   **Bandwidth:** ~2,000\u20132,500 GB/s (for A",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 738,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 12.477,
+          "prefill_tps": 47.0,
+          "n": 192,
+          "wall_s": 16.78,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 12.618,
+          "prefill_tps": 59.3,
+          "n": 192,
+          "wall_s": 16.65,
+          "sha": "346b38bc9bed",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443) with an **unrecognized issuer**, there is a high probability this is a **rogue service**, a **man-in-the-middle (MITM) interception**, or a **misconfigured internal service**.\n\n**\u26a0 Safety & Ethical Warning:**\n*   **Do not** blindly trust the certificate.\n*   **Do not** inject malicious payloads into the TLS handshake unless explicitly authorized for penetration testing.\n*   **Do not** disable system-wide TLS verification.\n*   **Goal:** Identify the service silently and safely.\n\n---\n\n## \ud83e\udded Step-by-Step Methodology\n\n### Phase 1: Passive Reconnaissance & Context Gathering\n**Goal:** Understand the service\u2019s role without interacting with it.\n\n#### 1.1 Check Local",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 793,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 16.635,
+          "prefill_tps": 421.1,
+          "n": 8,
+          "wall_s": 11.97,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 12.557,
+          "prefill_tps": 51.0,
+          "n": 192,
+          "wall_s": 16.53,
+          "sha": "6c2019c8be08",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency characteristics**, and **data movement costs**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the ~80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory (VRAM):** Modern high-end GPUs (e.g., NVIDIA A100, H100, or consumer RTX 4090) use H100/A100-style architectures with **HBM (High Bandwidth Memory)** or GDDR6/H100 memory controllers. These are designed for massive parallel throughput.\n    *   **Bandwidth:** ~2,000\u20132,500 GB/s (for A",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 738,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 12.616,
+          "prefill_tps": 51.8,
+          "n": 192,
+          "wall_s": 16.44,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 12.786,
+          "prefill_tps": 63.8,
+          "n": 192,
+          "wall_s": 16.37,
+          "sha": "346b38bc9bed",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443) with an **unrecognized issuer**, there is a high probability this is a **rogue service**, a **man-in-the-middle (MITM) interception**, or a **misconfigured internal service**.\n\n**\u26a0 Safety & Ethical Warning:**\n*   **Do not** blindly trust the certificate.\n*   **Do not** inject malicious payloads into the TLS handshake unless explicitly authorized for penetration testing.\n*   **Do not** disable system-wide TLS verification.\n*   **Goal:** Identify the service silently and safely.\n\n---\n\n## \ud83e\udded Step-by-Step Methodology\n\n### Phase 1: Passive Reconnaissance & Context Gathering\n**Goal:** Understand the service\u2019s role without interacting with it.\n\n#### 1.1 Check Local",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 793,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 17.995,
+          "prefill_tps": 423.1,
+          "n": 8,
+          "wall_s": 11.97,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 2.57,
+    "vram_used_mib": 2517,
+    "ram_used_gib": 24.48,
+    "vram_mib_rep0": 2547,
+    "ram_gib_rep0": 30.91,
+    "vram_mib_rep1": 2547,
+    "ram_gib_rep1": 30.77,
+    "ram_peak_gib": 31.14,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ncmoe-20",
+    "extra": [
+      "--n-cpu-moe",
+      "20"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 20.591,
+          "prefill_tps": 64.3,
+          "n": 192,
+          "wall_s": 10.23,
+          "sha": "ccdf309a2f6b",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency characteristics**, and **data movement costs**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the ~80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory (VRAM):** Modern high-end GPUs (e.g., NVIDIA A100, H100, or consumer RTX 4090) use H100/A100-style architectures with **HBM (High Bandwidth Memory)** or similar optimized memory controllers. They achieve memory bandwidths of **~2\u20133 TB/s** (terabytes per second) for large, contiguous transfers.\n*   **System RAM (DRAM):** CPUs access system",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 795,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 20.685,
+          "prefill_tps": 90.3,
+          "n": 192,
+          "wall_s": 10.02,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 21.096,
+          "prefill_tps": 118.3,
+          "n": 192,
+          "wall_s": 9.83,
+          "sha": "346b38bc9bed",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443) with an **unrecognized issuer**, there is a high probability this is a **rogue service**, a **man-in-the-middle (MITM) interception**, or a **misconfigured internal service**.\n\n**\u26a0 Safety & Ethical Warning:**\n*   **Do not** blindly trust the certificate.\n*   **Do not** inject malicious payloads into the TLS handshake unless explicitly authorized for penetration testing.\n*   **Do not** disable system-wide TLS verification.\n*   **Goal:** Identify the service silently and safely.\n\n---\n\n## \ud83e\udded Step-by-Step Methodology\n\n### Phase 1: Passive Reconnaissance & Context Gathering\n**Goal:** Understand the service\u2019s role without interacting with it.\n\n#### 1.1 Check Local",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 793,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 27.228,
+          "prefill_tps": 780.0,
+          "n": 8,
+          "wall_s": 6.53,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 21.16,
+          "prefill_tps": 90.0,
+          "n": 192,
+          "wall_s": 9.81,
+          "sha": "ccdf309a2f6b",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency characteristics**, and **data movement costs**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the ~80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory (VRAM):** Modern high-end GPUs (e.g., NVIDIA A100, H100, or consumer RTX 4090) use H100/A100-style architectures with **HBM (High Bandwidth Memory)** or similar optimized memory controllers. They achieve memory bandwidths of **~2\u20133 TB/s** (terabytes per second) for large, contiguous transfers.\n*   **System RAM (DRAM):** CPUs access system",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 795,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 21.458,
+          "prefill_tps": 98.7,
+          "n": 192,
+          "wall_s": 9.61,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 21.22,
+          "prefill_tps": 116.7,
+          "n": 192,
+          "wall_s": 9.83,
+          "sha": "346b38bc9bed",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443) with an **unrecognized issuer**, there is a high probability this is a **rogue service**, a **man-in-the-middle (MITM) interception**, or a **misconfigured internal service**.\n\n**\u26a0 Safety & Ethical Warning:**\n*   **Do not** blindly trust the certificate.\n*   **Do not** inject malicious payloads into the TLS handshake unless explicitly authorized for penetration testing.\n*   **Do not** disable system-wide TLS verification.\n*   **Goal:** Identify the service silently and safely.\n\n---\n\n## \ud83e\udded Step-by-Step Methodology\n\n### Phase 1: Passive Reconnaissance & Context Gathering\n**Goal:** Understand the service\u2019s role without interacting with it.\n\n#### 1.1 Check Local",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 793,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 26.314,
+          "prefill_tps": 791.4,
+          "n": 8,
+          "wall_s": 6.49,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 4.59,
+    "vram_used_mib": 6275,
+    "ram_used_gib": 27.49,
+    "vram_mib_rep0": 6303,
+    "ram_gib_rep0": 30.94,
+    "vram_mib_rep1": 6303,
+    "ram_gib_rep1": 30.84,
+    "ram_peak_gib": 31.16,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.659.531 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "ncmoe-16",
+    "extra": [
+      "--n-cpu-moe",
+      "16"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 23.168,
+          "prefill_tps": 70.4,
+          "n": 192,
+          "wall_s": 9.12,
+          "sha": "8b05141327a3",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look beyond simple bandwidth numbers and analyze the **memory hierarchy**, **access patterns**, and **hardware architecture** of modern AI inference systems.\n\nThe \"80x\" figure is a heuristic often cited in the context of **LLM inference optimization** (particularly for Mixture-of-Experts, or MoE, models). It reflects the difference between **CPU RAM bandwidth** and **GPU VRAM (Video RAM) bandwidth**, but more importantly, it highlights the cost of **cache misses** and **memory latency** when weights are not resident in the GPU\u2019s fast memory.\n\nHere is a concrete, thorough breakdown.\n\n---\n\n### 1. The Core Metric: Memory Bandwidth and Latency\n\n#### A. GPU Memory (VRAM) Characteristics\n- **Bandwidth:** Modern GPUs (e.g.,",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 863,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 25.197,
+          "prefill_tps": 108.5,
+          "n": 192,
+          "wall_s": 8.24,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 24.373,
+          "prefill_tps": 132.4,
+          "n": 192,
+          "wall_s": 8.54,
+          "sha": "e0cd161213c5",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443), the risk of breaking the service is low, but the risk of triggering security alerts or causing instability exists. The goal is **passive fingerprinting** and **active probing** with minimal impact.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service, identify the daemon, and report findings.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Context Gathering**\n**Goal:** Understand the environment without sending any malicious or disruptive packets.\n\n#### **Step 1.1: Identify the Process Binding to Port 8443**\n*   **Tool:** `ss` (Socket Statistics) or `netstat`\n*   **Command:**\n    ```bash\n    sudo ss -tlnp | grep 844",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 770,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 30.057,
+          "prefill_tps": 925.3,
+          "n": 8,
+          "wall_s": 5.53,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 25.74,
+          "prefill_tps": 102.9,
+          "n": 192,
+          "wall_s": 8.17,
+          "sha": "8b05141327a3",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look beyond simple bandwidth numbers and analyze the **memory hierarchy**, **access patterns**, and **hardware architecture** of modern AI inference systems.\n\nThe \"80x\" figure is a heuristic often cited in the context of **LLM inference optimization** (particularly for Mixture-of-Experts, or MoE, models). It reflects the difference between **CPU RAM bandwidth** and **GPU VRAM (Video RAM) bandwidth**, but more importantly, it highlights the cost of **cache misses** and **memory latency** when weights are not resident in the GPU\u2019s fast memory.\n\nHere is a concrete, thorough breakdown.\n\n---\n\n### 1. The Core Metric: Memory Bandwidth and Latency\n\n#### A. GPU Memory (VRAM) Characteristics\n- **Bandwidth:** Modern GPUs (e.g.,",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 863,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 25.881,
+          "prefill_tps": 112.4,
+          "n": 192,
+          "wall_s": 8.02,
+          "sha": "e3f5727b0f95",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 693,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 26.091,
+          "prefill_tps": 140.2,
+          "n": 192,
+          "wall_s": 8.02,
+          "sha": "e0cd161213c5",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443), the risk of breaking the service is low, but the risk of triggering security alerts or causing instability exists. The goal is **passive fingerprinting** and **active probing** with minimal impact.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service, identify the daemon, and report findings.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Context Gathering**\n**Goal:** Understand the environment without sending any malicious or disruptive packets.\n\n#### **Step 1.1: Identify the Process Binding to Port 8443**\n*   **Tool:** `ss` (Socket Statistics) or `netstat`\n*   **Command:**\n    ```bash\n    sudo ss -tlnp | grep 844",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 770,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 30.699,
+          "prefill_tps": 926.4,
+          "n": 8,
+          "wall_s": 5.57,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 4.58,
+    "vram_used_mib": 6959,
+    "ram_used_gib": 28.05,
+    "vram_mib_rep0": 6987,
+    "ram_gib_rep0": 31.03,
+    "vram_mib_rep1": 6987,
+    "ram_gib_rep1": 30.88,
+    "ram_peak_gib": 31.22,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.672.286 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "cache-3072",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "3072"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 34.032,
+          "prefill_tps": 39.9,
+          "n": 192,
+          "wall_s": 7.14,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 33.753,
+          "prefill_tps": 77.5,
+          "n": 192,
+          "wall_s": 6.56,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 34.747,
+          "prefill_tps": 92.9,
+          "n": 192,
+          "wall_s": 6.45,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 18.753,
+          "prefill_tps": 483.3,
+          "n": 8,
+          "wall_s": 10.45,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 27.871,
+          "prefill_tps": 69.1,
+          "n": 192,
+          "wall_s": 7.91,
+          "sha": "ff56dae5f270",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 688,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 26.449,
+          "prefill_tps": 56.7,
+          "n": 192,
+          "wall_s": 8.42,
+          "sha": "9b3973e88386",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 714,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 25.759,
+          "prefill_tps": 64.4,
+          "n": 192,
+          "wall_s": 8.83,
+          "sha": "ae09334b726d",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 856,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 14.175,
+          "prefill_tps": 372.1,
+          "n": 8,
+          "wall_s": 13.8,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 3.55,
+    "vram_used_mib": 5593,
+    "ram_used_gib": 24.65,
+    "vram_mib_rep0": 5647,
+    "ram_gib_rep0": 31.3,
+    "vram_mib_rep1": 5647,
+    "ram_gib_rep1": 31.69,
+    "ram_peak_gib": 31.87,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

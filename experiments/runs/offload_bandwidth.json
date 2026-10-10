@@ -1,0 +1,61 @@
+{
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "total_mib": 8187.5,
+  "torch_cpu_threads": 10,
+  "ramp_seconds": 2.0,
+  "link_at_rest": "pcie=gen3 x4  sm=2460 MHz  mem=6000 MHz  power=15.30 W",
+  "results": {
+    "vram_read": {
+      "bytes": 536870912,
+      "sec": 0.0033007999882102013,
+      "gbps": 162.64872573848635
+    },
+    "cpu_read": {
+      "bytes": 536870912,
+      "sec": 0.08066010003676638,
+      "gbps": 6.655966354558006
+    },
+    "cpu_add_traffic": {
+      "bytes": 805306368,
+      "sec": 0.17020869994303212,
+      "gbps": 4.731287932223978
+    },
+    "pcie_h2d_64MiB": {
+      "bytes": 67108864,
+      "sec": 0.024332699947990477,
+      "gbps": 2.7579703092316397
+    },
+    "pcie_h2d_128MiB": {
+      "bytes": 134217728,
+      "sec": 0.04813559999456629,
+      "gbps": 2.788325647029453
+    },
+    "pcie_h2d_256MiB": {
+      "bytes": 268435456,
+      "sec": 0.09589390002656728,
+      "gbps": 2.7992964716799538
+    },
+    "sustained_link_samples": [
+      "pcie=gen3 x4  sm=2490 MHz  mem=6000 MHz  power=15.73 W",
+      "pcie=gen3 x4  sm=2415 MHz  mem=6000 MHz  power=15.74 W",
+      "pcie=gen3 x4  sm=2490 MHz  mem=6000 MHz  power=15.76 W",
+      "pcie=gen3 x4  sm=2490 MHz  mem=6000 MHz  power=16.29 W"
+    ],
+    "overlap": {
+      "copy_bytes": 67108864,
+      "kernel_bytes": 1073741824,
+      "copy_only_ms": 24.177099985536188,
+      "kernel_only_ms": 6.134100025519729,
+      "both_ms": 24.296400020830333,
+      "sum_if_serial_ms": 30.311200011055917,
+      "max_if_hidden_ms": 24.177099985536188,
+      "copy_hidden_fraction": 0.24878087089948353
+    }
+  },
+  "per_byte_multiple_vs_vram": {
+    "cpu_read": 24.436530636472416,
+    "pcie_h2d_256MiB": 58.10342969527457,
+    "pcie_h2d_128MiB": 58.33204091916753,
+    "pcie_h2d_64MiB": 58.974066977464915
+  }
+}

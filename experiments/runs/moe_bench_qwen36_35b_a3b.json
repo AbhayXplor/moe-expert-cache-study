@@ -1,0 +1,48 @@
+[
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 29.447,
+          "prefill_tps": 18.6,
+          "n": 128,
+          "wall_s": 7.49,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 34.116,
+          "prefill_tps": 35.1,
+          "n": 128,
+          "wall_s": 5.56,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 34.931,
+          "prefill_tps": 44.5,
+          "n": 128,
+          "wall_s": 5.52,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.66,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 31.12,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 44.15,
+    "ram_peak_gib": 44.12,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

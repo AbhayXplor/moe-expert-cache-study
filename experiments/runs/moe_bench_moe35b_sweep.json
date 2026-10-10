@@ -1,0 +1,526 @@
+[
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 29.733,
+          "prefill_tps": 19.6,
+          "n": 192,
+          "wall_s": 9.4,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 29.483,
+          "prefill_tps": 33.1,
+          "n": 192,
+          "wall_s": 8.42,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 34.607,
+          "prefill_tps": 44.8,
+          "n": 192,
+          "wall_s": 7.41,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 34.543,
+          "prefill_tps": 34.5,
+          "n": 192,
+          "wall_s": 7.25,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 34.741,
+          "prefill_tps": 38.1,
+          "n": 192,
+          "wall_s": 7.16,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 34.648,
+          "prefill_tps": 46.4,
+          "n": 192,
+          "wall_s": 7.32,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 4.58,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 34.2,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 45.76,
+    "vram_mib_rep1": 3219,
+    "ram_gib_rep1": 45.66,
+    "ram_peak_gib": 47.02,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ncmoe-40",
+    "extra": [
+      "--n-cpu-moe",
+      "40"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 29.828,
+          "prefill_tps": 19.5,
+          "n": 192,
+          "wall_s": 9.38,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 32.409,
+          "prefill_tps": 31.3,
+          "n": 192,
+          "wall_s": 7.95,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 30.819,
+          "prefill_tps": 42.5,
+          "n": 192,
+          "wall_s": 8.19,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 34.199,
+          "prefill_tps": 33.7,
+          "n": 192,
+          "wall_s": 7.38,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 32.093,
+          "prefill_tps": 37.4,
+          "n": 192,
+          "wall_s": 7.64,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 29.846,
+          "prefill_tps": 44.5,
+          "n": 192,
+          "wall_s": 8.29,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.59,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 32.09,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 48.6,
+    "vram_mib_rep1": 3219,
+    "ram_gib_rep1": 48.82,
+    "ram_peak_gib": 49.82,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ncmoe-36",
+    "extra": [
+      "--n-cpu-moe",
+      "36"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 22.959,
+          "prefill_tps": 21.5,
+          "n": 192,
+          "wall_s": 11.05,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 27.633,
+          "prefill_tps": 36.4,
+          "n": 192,
+          "wall_s": 8.71,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 26.931,
+          "prefill_tps": 44.7,
+          "n": 192,
+          "wall_s": 8.99,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 26.038,
+          "prefill_tps": 36.1,
+          "n": 192,
+          "wall_s": 9.02,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 24.296,
+          "prefill_tps": 39.7,
+          "n": 192,
+          "wall_s": 9.46,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 28.605,
+          "prefill_tps": 46.1,
+          "n": 192,
+          "wall_s": 8.5,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 8.58,
+    "vram_used_mib": 5127,
+    "ram_used_gib": 33.97,
+    "vram_mib_rep0": 5145,
+    "ram_gib_rep0": 46.88,
+    "vram_mib_rep1": 5145,
+    "ram_gib_rep1": 45.89,
+    "ram_peak_gib": 47.28,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ncmoe-34",
+    "extra": [
+      "--n-cpu-moe",
+      "34"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 24.686,
+          "prefill_tps": 20.1,
+          "n": 192,
+          "wall_s": 10.63,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 25.49,
+          "prefill_tps": 34.8,
+          "n": 192,
+          "wall_s": 9.38,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 22.905,
+          "prefill_tps": 48.0,
+          "n": 192,
+          "wall_s": 10.11,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 26.11,
+          "prefill_tps": 35.3,
+          "n": 192,
+          "wall_s": 9.03,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 28.461,
+          "prefill_tps": 41.2,
+          "n": 192,
+          "wall_s": 8.25,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 26.128,
+          "prefill_tps": 50.5,
+          "n": 192,
+          "wall_s": 8.97,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 12.65,
+    "vram_used_mib": 6055,
+    "ram_used_gib": 33.96,
+    "vram_mib_rep0": 6073,
+    "ram_gib_rep0": 45.66,
+    "vram_mib_rep1": 6073,
+    "ram_gib_rep1": 45.62,
+    "ram_peak_gib": 46.33,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ncmoe-32",
+    "extra": [
+      "--n-cpu-moe",
+      "32"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 24.22,
+          "prefill_tps": 19.3,
+          "n": 192,
+          "wall_s": 10.9,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 28.576,
+          "prefill_tps": 40.5,
+          "n": 192,
+          "wall_s": 8.3,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 28.594,
+          "prefill_tps": 51.4,
+          "n": 192,
+          "wall_s": 8.34,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 29.861,
+          "prefill_tps": 40.4,
+          "n": 192,
+          "wall_s": 7.9,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 30.175,
+          "prefill_tps": 45.4,
+          "n": 192,
+          "wall_s": 7.72,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 30.411,
+          "prefill_tps": 55.7,
+          "n": 192,
+          "wall_s": 7.81,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 12.66,
+    "vram_used_mib": 6985,
+    "ram_used_gib": 34.85,
+    "vram_mib_rep0": 7003,
+    "ram_gib_rep0": 45.82,
+    "vram_mib_rep1": 7003,
+    "ram_gib_rep1": 45.71,
+    "ram_peak_gib": 46.03,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.804.066 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "ncmoe-30",
+    "extra": [
+      "--n-cpu-moe",
+      "30"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 25.475,
+          "prefill_tps": 19.8,
+          "n": 192,
+          "wall_s": 10.43,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 30.329,
+          "prefill_tps": 42.8,
+          "n": 192,
+          "wall_s": 7.84,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 28.373,
+          "prefill_tps": 49.8,
+          "n": 192,
+          "wall_s": 8.47,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 30.675,
+          "prefill_tps": 40.9,
+          "n": 192,
+          "wall_s": 7.72,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 32.438,
+          "prefill_tps": 48.5,
+          "n": 192,
+          "wall_s": 7.2,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 31.544,
+          "prefill_tps": 59.8,
+          "n": 192,
+          "wall_s": 7.46,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 12.66,
+    "vram_used_mib": 7849,
+    "ram_used_gib": 36.02,
+    "vram_mib_rep0": 7867,
+    "ram_gib_rep0": 46.71,
+    "vram_mib_rep1": 7867,
+    "ram_gib_rep1": 46.22,
+    "ram_peak_gib": 47.22,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.846.728 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "ncmoe-28",
+    "extra": [
+      "--n-cpu-moe",
+      "28"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 11.337,
+          "prefill_tps": 11.2,
+          "n": 192,
+          "wall_s": 22.05,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 12.585,
+          "prefill_tps": 15.6,
+          "n": 192,
+          "wall_s": 19.3,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 11.651,
+          "prefill_tps": 18.4,
+          "n": 192,
+          "wall_s": 20.92,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      },
+      {
+        "prose": {
+          "decode_tps": 13.25,
+          "prefill_tps": 15.3,
+          "n": 192,
+          "wall_s": 18.29,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 13.4,
+          "prefill_tps": 17.0,
+          "n": 192,
+          "wall_s": 17.96,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 13.42,
+          "prefill_tps": 19.0,
+          "n": 192,
+          "wall_s": 18.6,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 9.69,
+    "vram_used_mib": 7901,
+    "ram_used_gib": 37.14,
+    "vram_mib_rep0": 7919,
+    "ram_gib_rep0": 46.72,
+    "vram_mib_rep1": 7919,
+    "ram_gib_rep1": 46.36,
+    "ram_peak_gib": 48.9,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.01.060.384 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  }
+]

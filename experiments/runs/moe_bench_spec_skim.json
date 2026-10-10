@@ -1,0 +1,296 @@
+[
+  {
+    "config": "spec-none",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "none"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-MTP-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 27.449,
+          "prefill_tps": 16.6,
+          "n": 200,
+          "wall_s": 10.76,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Here's a thinking process:\n\n1.  **Deconstruct the User's Prompt:**\n   - **Core Claim:** Reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory.\n   - **Question 1:** Why is this the case? (Explain the technical reasons)\n   - **Question 2:** What does this imply for choosing where a Mixture-of-Experts (MoE) model's weights should live? (Practical implications for MoE architecture design)\n   - **Requirements:** Be concrete and thorough.\n\n2.  **Analyze the Core Claim (80x cost difference):**\n   - Is this claim accurate? Let's check typical memory bandwidths:\n     - System RAM (DDR4/DDR5): ~20-50 GB/s per channel, typically 2-4 channels. Total ~100-200 GB/s for a typical server.\n",
+          "thinking_chars": 738,
+          "answer_chars": 0,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "repeat": {
+          "decode_tps": 30.287,
+          "prefill_tps": 30.9,
+          "n": 200,
+          "wall_s": 8.56,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Thinking Process:\n1.  **Analyze User Input:**\n   - Output format: JSON array\n   - Number of objects: 25\n   - Keys per object: exactly 6 keys in the same order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Values: plausible placeholder values\n   - Constraint: No prose, just the JSON array.\n\n2.  **Determine Key Constraints:**\n   - Order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Types (implied by names):\n     - `id`: string or number (I'll use strings like \"svc-001\")\n     - `name`: string (e.g., \"auth-service\", \"payment-gateway\")\n     - `category`: string (e.g., \"backend\", \"frontend\", \"database\", \"api\")",
+          "thinking_chars": 651,
+          "answer_chars": 0,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 14.63,
+    "vram_used_mib": 3483,
+    "ram_used_gib": 30.32,
+    "vram_mib_rep0": 3499,
+    "ram_gib_rep0": 43.34,
+    "ram_peak_gib": 43.18,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ngram-simple-4",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "ngram-simple",
+      "--spec-ngram-simple-size-n",
+      "4",
+      "--spec-ngram-simple-size-m",
+      "16"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-MTP-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 21.903,
+          "prefill_tps": 19.8,
+          "n": 200,
+          "wall_s": 12.03,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Here's a thinking process:\n\n1.  **Deconstruct the User's Prompt:**\n   - **Core Claim:** Reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory.\n   - **Question 1:** Why is this the case? (Explain the technical reasons)\n   - **Question 2:** What does this imply for choosing where a Mixture-of-Experts (MoE) model's weights should live? (Practical implications for MoE architecture design)\n   - **Requirements:** Be concrete and thorough.\n\n2.  **Analyze the Core Claim (80x cost difference):**\n   - Is this claim accurate? Let's check typical memory bandwidths:\n     - System RAM (DDR4/DDR5): ~20-50 GB/s per channel, typically 2-4 channels. Total ~50-200 GB/s for a typical server. Per-core",
+          "thinking_chars": 745,
+          "answer_chars": 0,
+          "draft_n": 112,
+          "draft_n_accepted": 21
+        },
+        "repeat": {
+          "decode_tps": 23.981,
+          "prefill_tps": 31.8,
+          "n": 200,
+          "wall_s": 10.24,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Thinking Process:\n1.  **Analyze User Input:**\n   - Output format: JSON array\n   - Number of objects: 25\n   - Keys per object: exactly 6 keys in the same order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Values: plausible placeholder values\n   - Constraint: No prose, just the JSON array.\n\n2.  **Determine Key Constraints:**\n   - Order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Types (implied by names): `id` (string or number), `name` (string), `category` (string), `status` (string), `latency_ms` (number), `retries` (number)\n   - Plausible placeholders: e.g., IDs like \"svc-001\", names like \"auth-service",
+          "thinking_chars": 652,
+          "answer_chars": 0,
+          "draft_n": 122,
+          "draft_n_accepted": 28
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.59,
+    "vram_used_mib": 3483,
+    "ram_used_gib": 30.18,
+    "vram_mib_rep0": 3501,
+    "ram_gib_rep0": 43.71,
+    "ram_peak_gib": 43.6,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ngram-mod-8",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "ngram-mod",
+      "--spec-ngram-mod-n-match",
+      "8",
+      "--spec-ngram-mod-n-min",
+      "4",
+      "--spec-ngram-mod-n-max",
+      "16"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-MTP-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 28.289,
+          "prefill_tps": 21.2,
+          "n": 200,
+          "wall_s": 9.78,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Here's a thinking process:\n\n1.  **Deconstruct the User's Prompt:**\n   - **Core Claim:** Reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory.\n   - **Question 1:** Why is this the case? (Explain the technical reasons)\n   - **Question 2:** What does this imply for choosing where a Mixture-of-Experts (MoE) model's weights should live? (Practical implications for MoE architecture design)\n   - **Requirements:** Be concrete and thorough.\n\n2.  **Analyze the Core Claim (80x cost difference):**\n   - Is this claim accurate? Let's check typical memory bandwidths:\n     - System RAM (DDR4/DDR5): ~20-50 GB/s per channel, typically 2-4 channels. Total ~100-200 GB/s for a typical server.\n",
+          "thinking_chars": 738,
+          "answer_chars": 0,
+          "draft_n": 16,
+          "draft_n_accepted": 12
+        },
+        "repeat": {
+          "decode_tps": 26.896,
+          "prefill_tps": 32.5,
+          "n": 200,
+          "wall_s": 9.29,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Thinking Process:\n1.  **Analyze User Input:**\n   - Output format: JSON array\n   - Number of objects: 25\n   - Keys per object: exactly 6 keys in the same order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Values: plausible placeholder values\n   - Constraint: No prose, just the JSON array.\n\n2.  **Determine Key Constraints:**\n   - Order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Types (implied by names): `id` (string or number), `name` (string), `category` (string), `status` (string), `latency_ms` (number), `retries` (number)\n   - Plausible placeholders: e.g., IDs like \"svc-001\", names like \"auth-service",
+          "thinking_chars": 652,
+          "answer_chars": 0,
+          "draft_n": 48,
+          "draft_n_accepted": 16
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.58,
+    "vram_used_mib": 3483,
+    "ram_used_gib": 30.18,
+    "vram_mib_rep0": 3501,
+    "ram_gib_rep0": 42.24,
+    "ram_peak_gib": 42.67,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ngram-cache",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "ngram-cache"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-MTP-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 17.841,
+          "prefill_tps": 16.5,
+          "n": 200,
+          "wall_s": 14.69,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Here's a thinking process:\n\n1.  **Deconstruct the User's Prompt:**\n   - **Core Claim:** Reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory.\n   - **Question 1:** Why is this the case? (Explain the technical reasons)\n   - **Question 2:** What does this imply for choosing where a Mixture-of-Experts (MoE) model's weights should live? (Practical implications for MoE architecture design)\n   - **Requirements:** Be concrete and thorough.\n\n2.  **Analyze the Core Claim (80x cost difference):**\n   - Is this claim accurate? Let's check typical memory bandwidths:\n     - System RAM (DDR4/DDR5): ~20-50 GB/s per channel, typically 2-4 channels. Total ~50-200 GB/s for a typical server.\n    ",
+          "thinking_chars": 741,
+          "answer_chars": 0,
+          "draft_n": 136,
+          "draft_n_accepted": 22
+        },
+        "repeat": {
+          "decode_tps": 22.537,
+          "prefill_tps": 31.9,
+          "n": 200,
+          "wall_s": 10.77,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Thinking Process:\n1.  **Analyze User Input:**\n   - Output format: JSON array\n   - Number of objects: 25\n   - Keys per object: exactly 6 keys in the same order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Values: plausible placeholder values\n   - Constraint: No prose, just the JSON array.\n\n2.  **Determine Key Constraints:**\n   - Order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Types (implied by names):\n     - `id`: string or number (I'll use strings like \"svc-001\")\n     - `name`: string (e.g., \"auth-service\", \"payment-gateway\")\n     - `category`: string (e.g., \"backend\", \"frontend\", \"database\", \"api\")",
+          "thinking_chars": 651,
+          "answer_chars": 0,
+          "draft_n": 40,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 6.58,
+    "vram_used_mib": 3483,
+    "ram_used_gib": 28.32,
+    "vram_mib_rep0": 3501,
+    "ram_gib_rep0": 41.99,
+    "ram_peak_gib": 42.0,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "draft-simple",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "draft-simple",
+      "--spec-draft-n-max",
+      "4"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-MTP-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 20.129,
+          "prefill_tps": 19.7,
+          "n": 200,
+          "wall_s": 12.84,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Here's a thinking process:\n\n1.  **Deconstruct the User's Prompt:**\n   - **Core Claim:** Reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory.\n   - **Question 1:** Why is this the case? (Explain the technical reasons)\n   - **Question 2:** What does this imply for choosing where a Mixture-of-Experts (MoE) model's weights should live? (Practical implications for MoE architecture design)\n   - **Requirements:** Be concrete and thorough.\n\n2.  **Analyze the Core Claim (80x cost difference):**\n   - Is this claim accurate? Let's check typical memory bandwidths:\n     - System RAM (DDR4/DDR5): ~20-50 GB/s per channel, typically 2-4 channels. Total ~100-200 GB/s for a typical server.\n",
+          "thinking_chars": 738,
+          "answer_chars": 0,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "repeat": {
+          "decode_tps": 24.833,
+          "prefill_tps": 31.5,
+          "n": 200,
+          "wall_s": 10.01,
+          "sha": "e3b0c44298fc",
+          "text": "",
+          "reasoning": "Thinking Process:\n1.  **Analyze User Input:**\n   - Output format: JSON array\n   - Number of objects: 25\n   - Keys per object: exactly 6 keys in the same order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Values: plausible placeholder values\n   - Constraint: No prose, just the JSON array.\n\n2.  **Determine Key Constraints:**\n   - Order: `id`, `name`, `category`, `status`, `latency_ms`, `retries`\n   - Types (implied by names):\n     - `id`: string or number (I'll use strings like \"svc-001\")\n     - `name`: string (e.g., \"auth-service\", \"payment-gateway\")\n     - `category`: string (e.g., \"backend\", \"frontend\", \"database\", \"api\")",
+          "thinking_chars": 651,
+          "answer_chars": 0,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.56,
+    "vram_used_mib": 3483,
+    "ram_used_gib": 28.71,
+    "vram_mib_rep0": 3499,
+    "ram_gib_rep0": 42.0,
+    "ram_peak_gib": 41.97,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.04.981.938 E srv    load_model: failed to initialize speculative decoding context: draft-simple requires a draft context\r"
+    ]
+  }
+]

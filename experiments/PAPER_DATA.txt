@@ -1,0 +1,156 @@
+==============================================================================
+1. MODEL ANATOMY (from the GGUF tensor index + metadata)
+==============================================================================
+
+Qwen3.6-35B-A3B (full)
+  file                   20.604 GiB (22,123,538,944 B)
+  expert weights         18.225 GiB (19,568,525,312 B) = 88.5% of file, 120 stacked tensors
+  experts per layer    256 (top-8 used), 40 layers
+  per expert x layer      1.822 MiB
+  per layer, all        466.550 MiB
+  expert bytes/token      611.5 MB  (top-8 of 256)
+  expert 'slots'       10240  (layer x expert combinations)
+
+Qwen3.6-35B-A3B-REAP-48
+  file                    8.769 GiB (9,415,930,368 B)
+  expert weights          7.033 GiB (7,551,574,016 B) = 80.2% of file, 120 stacked tensors
+  experts per layer    133 (top-8 used), 40 layers
+  per expert x layer      1.354 MiB
+  per layer, all        180.044 MiB
+  expert bytes/token      454.2 MB  (top-8 of 133)
+  expert 'slots'       5320  (layer x expert combinations)
+
+==============================================================================
+2. COVERAGE = pool bytes / expert bytes, vs measured decode
+==============================================================================
+
+Qwen3.6-35B-A3B (full)   expert weights 19.569 GB
+  pool MiB  pool GB  coverage  decode  source
+      2048     2.15     11.0%    7.97  cache_ab2
+      2048     2.15     11.0%    8.03  cache_ab2
+      4096     4.29     21.9%   11.91  cache_ab2
+      none     0.00      0.0%   22.02  cache_ab2 (baseline)
+      none     0.00      0.0%   22.16  cache_ab2 (baseline)
+      none     0.00      0.0%   22.29  cache_ab2 (baseline)
+
+Qwen3.6-35B-A3B-REAP-48   expert weights 7.552 GB
+  pool MiB  pool GB  coverage  decode  source
+      3072     3.22     42.7%   25.52  reap2
+      3072     3.22     42.7%   25.82  reap2
+      3072     3.22     42.7%   30.44  reap
+      4096     4.29     56.9%   32.82  reap3
+      4096     4.29     56.9%   33.62  reap3
+      4096     4.29     56.9%   34.11  reap2
+      4608     4.83     64.0%   36.10  reap4
+      4608     4.83     64.0%   36.68  reap4
+      4608     4.83     64.0%   41.40  reap3
+      4864     5.10     67.5%   36.82  reap4
+      4864     5.10     67.5%   37.62  reap4
+      4864     5.10     67.5%   37.80  reap5
+      4864     5.10     67.5%   38.24  reap5
+      5120     5.37     71.1%   39.28  reap5
+      5120     5.37     71.1%   39.40  reap5
+      5120     5.37     71.1%   40.26  reap5
+      5120     5.37     71.1%   49.14  reap4
+      none     0.00      0.0%   12.68  reap (baseline)
+      none     0.00      0.0%   12.44  reap (baseline)
+
+==============================================================================
+3. MECHANISM CROSS-CHECK -- hypothesis, arithmetic only
+==============================================================================
+Assume a cache miss costs one synchronous host->device upload of
+that expert's weights over the measured 2.80 GB/s PCIe.
+time/token = (expert bytes/token) * f / link, f = missing fraction.
+
+Qwen3.6-35B-A3B (full)   expert bytes/token = 611.5 MB
+      f  ms/token  predicted           implied by
+   1.00     218.4      4.58 tok/s
+   0.55     120.1      8.33 tok/s
+   0.37      80.8     12.38 tok/s
+   0.10      21.8     45.79 tok/s
+  measured   8.0 tok/s (pool 2048, full model) implies f = 0.57
+  measured  11.9 tok/s (pool 4096, full model) implies f = 0.38
+
+Qwen3.6-35B-A3B-REAP-48   expert bytes/token = 454.2 MB
+      f  ms/token  predicted           implied by
+   1.00     162.2      6.16 tok/s
+   0.55      89.2     11.21 tok/s
+   0.37      60.0     16.66 tok/s
+   0.10      16.2     61.64 tok/s
+
+==============================================================================
+4. MEASURED CONFIGURATIONS (as recorded in runs/)
+==============================================================================
+
+[cache_ab]
+  cpu-moe             31.25 tok/s [ 30.0- 32.3]  prefill     214  vram 3203  ram 45.5    
+  cache-2048         no timing (err=no /health)
+  cache-2048         no timing (err=no /health)
+  cpu-moe             31.87 tok/s [ 30.5- 34.2]  prefill     221  vram 3203  ram 47.95    
+  cache-2048         no timing (err=no /health)
+  cache-2048         no timing (err=no /health)
+
+[cache_ab2]
+  cpu-moe             22.02 tok/s [ 20.8- 23.2]  prefill     101  vram 3187  ram 44.86  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  cache-2048           8.03 tok/s [  6.9-  8.7]  prefill      93  vram 5237  ram 44.18  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  cpu-moe             22.16 tok/s [ 19.9- 23.5]  prefill     100  vram 3187  ram 44.29  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  cache-2048           7.97 tok/s [  7.1-  8.6]  prefill      90  vram 5237  ram 44.23  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  cpu-moe             22.29 tok/s [ 20.8- 23.7]  prefill     100  vram 3187  ram 44.23  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  cache-4096          11.91 tok/s [ 10.2- 13.5]  prefill     160  vram 7283  ram 44.21  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+
+[reap]
+  cpu-moe             12.68 tok/s [ 10.9- 18.1]  prefill     411  vram 2517  ram 32.52  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  ncmoe-20            18.18 tok/s [ 16.8- 19.2]  prefill     766  vram 6275  ram 31.5  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cpu-moe             12.44 tok/s [ 11.6- 12.8]  prefill     422  vram 2517  ram 31.14  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  ncmoe-20            21.04 tok/s [ 20.6- 21.5]  prefill     786  vram 6275  ram 31.16  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  ncmoe-16            25.07 tok/s [ 23.2- 26.1]  prefill     926  vram 6959  ram 31.22  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-3072          30.44 tok/s [ 25.8- 34.7]  prefill     428  vram 5593  ram 31.87  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+
+[reap2]
+  ncmoe-16            26.02 tok/s [ 22.7- 34.2]  prefill     909  vram 6959  ram 32.34  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-3072          25.52 tok/s [ 23.3- 27.8]  prefill     390  vram 5593  ram 32.12  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  ncmoe-16            28.77 tok/s [ 26.1- 36.6]  prefill     926  vram 6959  ram 32.94  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-3072          25.82 tok/s [ 22.7- 27.3]  prefill     372  vram 5593  ram 33.43  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  ncmoe-14            31.49 tok/s [ 29.6- 38.0]  prefill    1025  vram 7303  ram 32.97  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-4096          34.11 tok/s [ 33.0- 35.2]  prefill     437  vram 6615  ram 32.96  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  ncmoe-20-c1024      30.34 tok/s [ 28.2- 34.2]  prefill     690  vram 7299  ram 33.96  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+
+[reap3]
+  cache-4096          33.62 tok/s [ 29.0- 36.7]  prefill     470  vram 6615  ram 33.56  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  ncmoe-14            27.45 tok/s [ 24.6- 29.2]  prefill    1012  vram 7303  ram 33.77  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-4096          32.82 tok/s [ 28.8- 35.7]  prefill     462  vram 6615  ram 33.81  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  ncmoe-14            29.06 tok/s [ 26.9- 29.9]  prefill    1020  vram 7303  ram 33.33  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-4608          41.40 tok/s [ 36.7- 44.6]  prefill     536  vram 7129  ram 33.72  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-4096-ub4096   34.27 tok/s [ 28.2- 39.3]  prefill    1235  vram 7573  ram 32.67  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+
+[reap4]
+  cache-4608          36.10 tok/s [ 28.9- 43.4]  prefill     499  vram 7129  ram 32.43  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-4864          37.62 tok/s [ 29.9- 40.6]  prefill     499  vram 7383  ram 32.69  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-4608          36.68 tok/s [ 30.4- 39.8]  prefill     474  vram 7129  ram 32.64  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-4864          36.82 tok/s [ 30.2- 39.9]  prefill     492  vram 7383  ram 32.45  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-5120          49.14 tok/s [ 43.0- 51.2]  prefill     708  vram 7639  ram 32.68  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+
+[reap5]
+  cache-5120          39.28 tok/s [ 31.4- 43.1]  prefill     568  vram 7639  ram 33.32  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-4864          37.80 tok/s [ 30.8- 41.5]  prefill     536  vram 7383  ram 33.38  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-5120          39.40 tok/s [ 31.3- 43.6]  prefill     564  vram 7639  ram 33.5  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-4864          38.24 tok/s [ 31.7- 41.0]  prefill     495  vram 7383  ram 33.36  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cache-5120          40.26 tok/s [ 31.5- 46.8]  prefill     541  vram 7639  ram 33.65  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+
+[probe]
+  cpu-moe             26.30 tok/s [ 23.8- 29.1]  prefill     216  vram 3187  ram 44.4  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  fa-off              28.87 tok/s [ 27.3- 31.2]  prefill     226  vram 4033  ram 43.94  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  cpu-moe             26.38 tok/s [ 25.1- 27.2]  prefill     227  vram 3187  ram 44.0  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  perf                25.21 tok/s [ 24.0- 27.5]  prefill     220  vram 3187  ram 43.41  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+
+[oldbin]
+  cpu-moe             28.57 tok/s [ 27.4- 30.2]  prefill     215  vram 3203  ram 43.03  llamaserver  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  cpu-moe             26.38 tok/s [ 25.1- 27.5]  prefill     208  vram 3203  ram 42.65  llamaserver  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+  fa-off              23.99 tok/s [ 21.7- 26.7]  prefill     211  vram 4049  ram 41.84  llamaserver  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf
+
+[qualreap]
+  cache-4608          45.57 tok/s [ 44.4- 46.9]  prefill     639  vram 7129  ram 32.59  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+  cpu-moe             12.76 tok/s [ 11.3- 13.9]  prefill     426  vram 2517  ram 33.87  cuda  Qwen3.6-35B-A3B-REAP-48-v2.gguf
+
+[qualfull]
+  cpu-moe             30.58 tok/s [ 29.2- 31.8]  prefill     229  vram 3187  ram 44.02  cuda  Qwen3.6-35B-A3B-UD-Q4_K_M.gguf

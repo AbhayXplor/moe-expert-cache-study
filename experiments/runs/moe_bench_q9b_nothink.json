@@ -1,0 +1,54 @@
+[
+  {
+    "config": "none",
+    "extra": [],
+    "ctx": 16384,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 40.093,
+          "prefill_tps": 231.3,
+          "n": 400,
+          "wall_s": 10.24,
+          "sha": "f3716d72799d",
+          "text": "The massive performance gap between reading weights from System RAM (CPU memory) and GPU memory is not merely a difference in speed; it is a fundamental architectural divergence in how data is accessed, stored, and moved.\n\nHere is a concrete, thorough explanation of why this gap exists (the \"80x\" factor) and the critical implications for designing Mixture-of-Experts (MoE) models.\n\n---\n\n### Part 1: Why is System RAM ~80x More Expensive?\n\nThe \"80x\" figure is a rough average that varies by hardware generation, but the ratio consistently hovers between 50x and 100x. This disparity stems from three compounding factors: **Bandwidth**, **Latency**, and **Memory Hierarchy**.\n\n#### 1. The Bandwidth Bottleneck (The \"Pipe\" Width)\n*   **GPU Memory (HBM):** Modern GPUs (e.g., NVIDIA H100/A100) use High-Bandwidth Memory (HBM). HBM is stacked vertically next to the GPU die, connected by wide 3D interconnects.\n    *   *Throughput:* ~3,000 GB/s to 5,000 GB/s per GPU.\n*   **System RAM (DDR5):** System RAM is connected via a PCIe bus (or a slower memory controller on the CPU).\n    *   *Throughput:* ~80 GB/s to 120 GB/s per channel. Even with multiple channels, a single CPU socket rarely exceeds 200 GB/s total bandwidth.\n*   **The Math:** If you need to load a 10 GB model, the GPU can do it in ~2 seconds, while the CPU might take 15\u201320 seconds. The bandwidth difference alone creates a 10x\u201320x penalty.\n\n#### 2. The Latency Wall",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1430
+        },
+        "code": {
+          "decode_tps": 39.878,
+          "prefill_tps": 442.3,
+          "n": 400,
+          "wall_s": 10.23,
+          "sha": "6de55ec90e17",
+          "text": "```python\nfrom typing import List, Tuple, Optional\nfrom collections import deque\nimport statistics\n\ndef calculate_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Calculate latency statistics (p50, p95, p99) and a rolling 60-second average.\n\n    Args:\n        samples: A list of tuples where each tuple contains (timestamp, latency_ms).\n                 Timestamps are expected to be in seconds (float or int).\n                 Latency is in milliseconds (float or int).\n\n    Returns:\n        A dictionary containing:\n            - 'p50': 50th percentile latency\n            - 'p95': 95th percentile latency\n            - 'p99': 99th percentile latency\n            - 'rolling_avg': A list of average latencies for each 60-second window.\n                              The windows are calculated based on the timestamps.\n                              If no data exists for a specific 60-second window, \n                              the average for that window is not included.\n                              The result is sorted by the start time of the window.\n\n    Note:\n        - Percentiles are calculated using linear interpolation (similar to numpy's default).\n        - The rolling average is computed over non-overlapping 60-second windows \n          starting from the earliest timestamp in the data.\n        - If the total time span is less than 60 seconds, only one window (all data) \n          will be returned.\n\n    Raises:\n        ValueError: If the input list is empty.\n    \"\"\"\n    if not samples:\n        raise ValueError(\"Input samples list cannot be empty.\")\n\n    # Sort samples by timestamp\n    sorted_samples = sorted(samples, key=lambda x: x[0])\n    \n    # Extract latencies for percentile calculation\n    latencies = [sample[1] for sample in sorted",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1789
+        },
+        "security": {
+          "decode_tps": 39.822,
+          "prefill_tps": 579.1,
+          "n": 400,
+          "wall_s": 10.25,
+          "sha": "98153da0478e",
+          "text": "This is a structured methodology for safely fingerprinting an unknown TLS service on a Linux host. The approach prioritizes non-intrusive reconnaissance, leveraging standard network analysis tools to identify the daemon and the underlying TLS implementation without disrupting the service or violating the scope of your authorization.\n\n### \u26a0\ufe0f Pre-Flight Safety & Authorization Check\nBefore executing any commands, ensure the following:\n1.  **Scope Verification**: Confirm that testing TCP port 8443 is explicitly within your authorized scope.\n2.  **Read-Only Mode**: All steps below are passive (listening/reading) or involve sending standard TLS ClientHello packets. No data exfiltration, port scanning of other ports, or modification of system files is performed.\n3.  **Isolation**: If possible, perform this from a dedicated VM or container to prevent accidental cross-contamination of the host environment.\n\n---\n\n### Phase 1: Initial Passive Fingerprinting (The TLS Handshake)\n\nThe goal here is to identify the TLS library (OpenSSL, BoringSSL, GnuTLS, etc.) and the application layer protocol (HTTP, custom binary, etc.) based on the `ClientHello` packet.\n\n#### Step 1.1: Capture the TLS Handshake\nWe need to see the raw bytes of the initial handshake to analyze the `CipherSuite` and `Extension` lists.\n\n*   **Tool**: `tcpdump` or `tshark` (Wireshark CLI).\n*   **Command**:\n    ```bash\n    sudo tcpdump -i any -s 0 -w handshake_capture.pcap host <TARGET_IP> and port 8443 and tcp[tcpflags] & (TCP_SYN | TCP_ACK)\n    ```\n    *(Note: Adjust the filter if you need to capture the full handshake including the ServerHello. Often, a simple `tcpdump -i any -s 0 -w",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1663
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 12.66,
+    "vram_used_mib": 5595,
+    "ram_used_gib": 31.18,
+    "vram_mib_rep0": 5597,
+    "ram_gib_rep0": 30.87,
+    "ram_peak_gib": 31.35,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

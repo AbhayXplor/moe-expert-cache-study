@@ -1,0 +1,84 @@
+[
+  {
+    "config": "mtp4096",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "4096",
+      "-ub",
+      "4096",
+      "--spec-type",
+      "draft-mtp",
+      "--spec-draft-n-max",
+      "2"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 32.942,
+          "prefill_tps": 17.3,
+          "n": 128,
+          "wall_s": 7.33,
+          "sha": "ca2b90c3ce5d",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a significant oversimplification and, in most modern high-performance contexts, **factually incorrect** if interpreted as raw bandwidth or latency. However, the *spirit* of the question touches on a real and critical architectural constraint: **the massive disparity in effective bandwidth and latency between CPU RAM and GPU HBM/VRAM**, which has profound implications for Mixture-of-Experts (MoE) models.\n\nLet\u2019s clarify the facts, then explain why the *effective cost* of accessing weights from RAM vs",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 622,
+          "draft_n": 106,
+          "draft_n_accepted": 73
+        },
+        "code": {
+          "decode_tps": 26.137,
+          "prefill_tps": 31.3,
+          "n": 128,
+          "wall_s": 7.0,
+          "sha": "3b0876499381",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 percentiles and a rolling 60-second average latency.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples, where timestamp is\n                 in seconds (float) and latency_ms is the latency in milliseconds\n                 (float). The samples should be sorted by timestamp in ascending\n                 order.\n\n    Returns:\n        A dictionary with keys 'p50',",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 546,
+          "draft_n": 96,
+          "draft_n_accepted": 78
+        },
+        "security": {
+          "decode_tps": 28.676,
+          "prefill_tps": 41.2,
+          "n": 128,
+          "wall_s": 6.54,
+          "sha": "e3b828583871",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Basic TLS Handshake**\n**Tool:** `openssl s_client`  \n**Command:**\n```bash\nopenssl s",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 562,
+          "draft_n": 105,
+          "draft_n_accepted": 74
+        },
+        "longprefill": {
+          "decode_tps": 32.264,
+          "prefill_tps": 586.8,
+          "n": 8,
+          "wall_s": 8.54,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 6,
+          "draft_n_accepted": 6
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 8.68,
+    "vram_used_mib": 5071,
+    "ram_used_gib": 33.25,
+    "vram_mib_rep0": 5243,
+    "ram_gib_rep0": 47.91,
+    "ram_peak_gib": 47.91,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

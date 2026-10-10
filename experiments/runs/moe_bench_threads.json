@@ -1,0 +1,190 @@
+[
+  {
+    "config": "t4",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-t",
+      "4"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 20.68,
+          "prefill_tps": 18.4,
+          "n": 192,
+          "wall_s": 12.39,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 24.766,
+          "prefill_tps": 30.8,
+          "n": 192,
+          "wall_s": 9.83,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 24.536,
+          "prefill_tps": 39.5,
+          "n": 192,
+          "wall_s": 9.92,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 6.61,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 30.6,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 45.31,
+    "ram_peak_gib": 46.6,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 24.518,
+          "prefill_tps": 18.5,
+          "n": 192,
+          "wall_s": 10.93,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 28.334,
+          "prefill_tps": 34.7,
+          "n": 192,
+          "wall_s": 8.61,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 25.923,
+          "prefill_tps": 42.4,
+          "n": 192,
+          "wall_s": 9.36,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 6.6,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 30.6,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 44.28,
+    "ram_peak_gib": 44.26,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "t16",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-t",
+      "16"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 14.473,
+          "prefill_tps": 18.0,
+          "n": 192,
+          "wall_s": 16.44,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 16.278,
+          "prefill_tps": 30.2,
+          "n": 192,
+          "wall_s": 13.9,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 17.426,
+          "prefill_tps": 40.1,
+          "n": 192,
+          "wall_s": 13.11,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.58,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 30.45,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 44.16,
+    "ram_peak_gib": 44.15,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 21.94,
+          "prefill_tps": 18.5,
+          "n": 192,
+          "wall_s": 11.84,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 25.953,
+          "prefill_tps": 33.8,
+          "n": 192,
+          "wall_s": 9.29,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 25.084,
+          "prefill_tps": 42.8,
+          "n": 192,
+          "wall_s": 9.6,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.58,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 30.49,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 44.34,
+    "ram_peak_gib": 44.31,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

@@ -1,0 +1,286 @@
+{
+  "base": "Qwen/Qwen3-1.7B",
+  "results": [
+    {
+      "block": "model.layers.0",
+      "file": "model_layers_0.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68258807,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4749,
+      "load_s": 1.67,
+      "encode_s": 29.35
+    },
+    {
+      "block": "model.layers.1",
+      "file": "model_layers_1.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68990124,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4592,
+      "load_s": 1.28,
+      "encode_s": 29.32
+    },
+    {
+      "block": "model.layers.10",
+      "file": "model_layers_10.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68386307,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4721,
+      "load_s": 0.04,
+      "encode_s": 28.56
+    },
+    {
+      "block": "model.layers.11",
+      "file": "model_layers_11.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68433799,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4711,
+      "load_s": 1.71,
+      "encode_s": 29.48
+    },
+    {
+      "block": "model.layers.12",
+      "file": "model_layers_12.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68346112,
+      "bf16_bytes": 100672000,
+      "ratio": 1.473,
+      "load_s": 1.41,
+      "encode_s": 28.95
+    },
+    {
+      "block": "model.layers.13",
+      "file": "model_layers_13.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68385198,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4721,
+      "load_s": 1.6,
+      "encode_s": 29.64
+    },
+    {
+      "block": "model.layers.14",
+      "file": "model_layers_14.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68422559,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4713,
+      "load_s": 1.41,
+      "encode_s": 28.98
+    },
+    {
+      "block": "model.layers.15",
+      "file": "model_layers_15.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68439107,
+      "bf16_bytes": 100672000,
+      "ratio": 1.471,
+      "load_s": 0.91,
+      "encode_s": 29.79
+    },
+    {
+      "block": "model.layers.16",
+      "file": "model_layers_16.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68518438,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4693,
+      "load_s": 0.05,
+      "encode_s": 32.14
+    },
+    {
+      "block": "model.layers.17",
+      "file": "model_layers_17.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68396855,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4719,
+      "load_s": 0.06,
+      "encode_s": 32.97
+    },
+    {
+      "block": "model.layers.18",
+      "file": "model_layers_18.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68433599,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4711,
+      "load_s": 0.07,
+      "encode_s": 33.39
+    },
+    {
+      "block": "model.layers.19",
+      "file": "model_layers_19.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68507324,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4695,
+      "load_s": 0.13,
+      "encode_s": 32.57
+    },
+    {
+      "block": "model.layers.2",
+      "file": "model_layers_2.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68479667,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4701,
+      "load_s": 0.1,
+      "encode_s": 34.52
+    },
+    {
+      "block": "model.layers.20",
+      "file": "model_layers_20.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68486626,
+      "bf16_bytes": 100672000,
+      "ratio": 1.47,
+      "load_s": 0.13,
+      "encode_s": 32.99
+    },
+    {
+      "block": "model.layers.21",
+      "file": "model_layers_21.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68440186,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4709,
+      "load_s": 0.25,
+      "encode_s": 32.66
+    },
+    {
+      "block": "model.layers.22",
+      "file": "model_layers_22.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68380257,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4722,
+      "load_s": 0.21,
+      "encode_s": 32.05
+    },
+    {
+      "block": "model.layers.23",
+      "file": "model_layers_23.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68318906,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4736,
+      "load_s": 0.07,
+      "encode_s": 32.32
+    },
+    {
+      "block": "model.layers.24",
+      "file": "model_layers_24.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68331990,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4733,
+      "load_s": 0.05,
+      "encode_s": 33.94
+    },
+    {
+      "block": "model.layers.25",
+      "file": "model_layers_25.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68313644,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4737,
+      "load_s": 0.11,
+      "encode_s": 33.44
+    },
+    {
+      "block": "model.layers.26",
+      "file": "model_layers_26.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68356331,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4728,
+      "load_s": 0.19,
+      "encode_s": 33.09
+    },
+    {
+      "block": "model.layers.27",
+      "file": "model_layers_27.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68242228,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4752,
+      "load_s": 0.22,
+      "encode_s": 33.27
+    },
+    {
+      "block": "model.layers.3",
+      "file": "model_layers_3.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68430147,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4712,
+      "load_s": 0.17,
+      "encode_s": 33.52
+    },
+    {
+      "block": "model.layers.4",
+      "file": "model_layers_4.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68399380,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4718,
+      "load_s": 0.17,
+      "encode_s": 33.65
+    },
+    {
+      "block": "model.layers.5",
+      "file": "model_layers_5.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68261959,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4748,
+      "load_s": 0.09,
+      "encode_s": 33.31
+    },
+    {
+      "block": "model.layers.6",
+      "file": "model_layers_6.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68348907,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4729,
+      "load_s": 0.05,
+      "encode_s": 23.12
+    },
+    {
+      "block": "model.layers.7",
+      "file": "model_layers_7.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68327960,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4734,
+      "load_s": 0.07,
+      "encode_s": 21.44
+    },
+    {
+      "block": "model.layers.8",
+      "file": "model_layers_8.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68338368,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4731,
+      "load_s": 0.1,
+      "encode_s": 21.31
+    },
+    {
+      "block": "model.layers.9",
+      "file": "model_layers_9.safetensors",
+      "elements": 50336000,
+      "stored_bytes": 68375033,
+      "bf16_bytes": 100672000,
+      "ratio": 1.4724,
+      "load_s": 0.08,
+      "encode_s": 21.08
+    }
+  ],
+  "compressed_ratio": 1.4717
+}

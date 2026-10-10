@@ -1,0 +1,158 @@
+[
+  {
+    "config": "cache-4608",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "--moe-cache-mib",
+      "4608"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 44.366,
+          "prefill_tps": 38.5,
+          "n": 400,
+          "wall_s": 10.58,
+          "sha": "7525dcd2ec0e",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency**, and **parallelism**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the 80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory Bandwidth:** Modern high-end GPUs (e.g., NVIDIA A100, H100, or even consumer RTX 4090) have massive memory bandwidths due to their specialized architecture.\n    *   NVIDIA A100 (Volta 2): ~2,000 GB/s\n    *   NVIDIA H100 (H100): ~5,600 GB/s\n    *   NVIDIA RTX 4090 (Consumer): ~900 GB/s\n*   **CPU Memory Bandwidth:** CPUs rely on DDR4/DDR5 memory controllers and have much lower bandwidth.\n    *   Typical Server CPU (eCPU): ~50\u2013100 GB/s\n    *   High-end CPU (eCPU with NVMe/PCIe optimizations): ~100\u2013200 GB/s\n\n**Calculation:**\nIf we take a conservative GPU bandwidth of **900 GB/s** (RTX 4090) and a typical CPU bandwidth of **10 GB/s** (for comparison with older/slower systems) or **50 GB/s** (modern server), the ratio is:\n*   900 / 10 = **90x**\n*   900 / 50 = **18x**\n\nHowever, the \"80x\" figure often cited in literature (e.g., by NVIDIA or in MoE research)",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1286,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 45.432,
+          "prefill_tps": 97.3,
+          "n": 400,
+          "wall_s": 9.51,
+          "sha": "e3dad4210ed1",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': 50th percentile (median) latency in ms\n            - 'p95': 95th percentile latency in ms\n            - 'p99': 99th percentile latency in ms\n            - 'rolling_avg_60s': Rolling 60-second average latency in ms,\n              computed as the average of all samples within each 60-second\n              window ending at each sample's timestamp. If no samples fall\n              within the window, the value is None.\n\n    Raises:\n        ValueError: If the samples list is empty.\n    \"\"\"\n    if not samples:\n        raise ValueError(\"samples list must not be empty\")\n\n    # Sort samples by timestamp to ensure correct percentile and rolling calculations\n    sorted_samples = sorted(samples, key=lambda x: x[0])\n    latencies = [lat for _, lat in sorted_samples]\n\n    # Compute percentiles using statistics module\n    p50 = statistics.median(latencies)\n    p95 = statistics.quantiles(latencies, 3)[1]  # quantiles returns sorted tuple of 3 values for 30th, 50th, 70th... wait, let's use a proper approach\n    # Actually, statistics.quantiles with n=3 gives quartiles (25th, 50",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1534,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 46.907,
+          "prefill_tps": 123.5,
+          "n": 400,
+          "wall_s": 9.25,
+          "sha": "3625cd50a63b",
+          "text": "This is a delicate task. Because you are on a **host you are authorized to test**, you have local access, which is significantly safer and more effective than remote scanning. The goal is to identify the service without causing denial-of-service (DoS) conditions, crashing the daemon, or triggering excessive logging that could impact production performance.\n\nHere is a step-by-step, safe methodology to fingerprint the TLS service on TCP 8443.\n\n### **Phase 0: Preparation & Safety Checks**\n\n**Goal:** Ensure you have the necessary tools and understand the scope.\n\n1.  **Verify Local Access:**\n    *   Confirm you have `root` or `sudo` privileges. This allows you to inspect running processes and network sockets without needing to interact with the service directly.\n    *   Command: `whoami` and `sudo -n true` (to check sudo access).\n\n2.  **Identify the Process Binding to Port 8443:**\n    *   **Tool:** `ss` (Socket Statistics) or `netstat`\n    *   **Command:** `sudo ss -tlnp 'sport = 8443'`\n    *   **Reasoning:** This identifies the local address and port. The `p` flag shows the PID (Process ID) if the process is local. If the PID is visible, you can directly identify the binary.\n    *   **Alternative:** If `ss` doesn\u2019t show the PID, use `sudo lsof -i :8443` or `sudo fuser -v 8443`.\n\n3.  **Identify the Binary:**\n    *   **Tool:** `ps` or `ls -l /proc/<PID>/exe`\n    *   **Command:** `sudo ps -p <PID> -o pid,comm,args`\n    *   **Reasoning:** This reveals",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1467,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 26.408,
+          "prefill_tps": 638.8,
+          "n": 8,
+          "wall_s": 7.88,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 3.59,
+    "vram_used_mib": 7129,
+    "ram_used_gib": 26.3,
+    "vram_mib_rep0": 7183,
+    "ram_gib_rep0": 32.62,
+    "ram_peak_gib": 32.59,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.667.779 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-REAP-48-v2-GGUF/Qwen3.6-35B-A3B-REAP-48-v2.gguf",
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 11.307,
+          "prefill_tps": 30.6,
+          "n": 400,
+          "wall_s": 37.26,
+          "sha": "9345e767cbe8",
+          "text": "To understand why reading weights from system RAM is roughly 80 times more expensive per byte than reading them from GPU memory, we must look at the fundamental hardware architectures of CPUs and GPUs, specifically focusing on **memory bandwidth**, **latency characteristics**, and **data movement costs**.\n\n### 1. The Core Metric: Memory Bandwidth\n\nThe primary reason for the ~80x difference is **memory bandwidth** (bytes per second).\n\n*   **GPU Memory (VRAM):** Modern high-end GPUs (e.g., NVIDIA A100, H100, or consumer RTX 4090) use H100/A100-style architectures with **HBM (High Bandwidth Memory)** or GDDR6/H100 memory controllers. These are designed for massive parallel throughput.\n    *   **Bandwidth:** ~2,000\u20132,500 GB/s (for A100) to ~3,000+ GB/s (for H100).\n    *   **Note:** Even consumer GPUs (RTX 3090/4090) offer ~1,000\u20131,500 GB/s.\n*   **System RAM (DRAM):** CPUs access main memory via DDR4/DDR5 controllers. The bottleneck is the PCIe/DMI bus and the memory controller\u2019s ability to fetch cache lines.\n    *   **Bandwidth:** ~50\u2013100 GB/s for a single CPU core. Even with multi-core systems, each core competes for memory bandwidth, and the effective bandwidth *per core* does not scale linearly.\n\n**Calculation:**\n$$ \\frac{2,000 \\text{ GB/s (GPU)}}{25 \\text{ GB/s (CPU)}} \\approx 80\\times $$\n\nThis is a conservative estimate. In practice, the difference can be",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1378,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 13.092,
+          "prefill_tps": 48.7,
+          "n": 400,
+          "wall_s": 31.89,
+          "sha": "c85d3758e70c",
+          "text": "```python\nimport statistics\nfrom typing import List, Tuple\n\n\ndef compute_latency_metrics(\n    samples: List[Tuple[float, float]]\n) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 latency percentiles and a rolling 60-second average.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples. Timestamps are in\n            seconds (floats), and latency_ms is the latency in milliseconds.\n\n    Returns:\n        A dictionary with keys:\n            - 'p50': The 50th percentile (median) latency in ms.\n            - 'p95': The 95th percentile latency in ms.\n            - 'p99': The 99th percentile latency in ms.\n            - 'rolling_avg_60s': The average latency over the last 60 seconds\n              of the dataset (i.e., all samples within 60 seconds of the\n              maximum timestamp).\n\n    Raises:\n        ValueError: If the samples list is empty.\n    \"\"\"\n    if not samples:\n        raise ValueError(\"samples must not be empty\")\n\n    # Sort samples by timestamp to ensure correct ordering\n    sorted_samples = sorted(samples, key=lambda x: x[0])\n\n    # Extract latencies for percentile calculations\n    latencies = [lat for _, lat in sorted_samples]\n\n    # Compute percentiles using statistics module\n    p50 = statistics.median(latencies)\n    p95 = statistics.quantiles(latencies, 3)[1]  # quantiles returns sorted tuple; index 1 is 95th\n    p99 = statistics.quantiles(latencies, 3)[2]  # index 2 is 99th\n\n    # Compute rolling 60-second average\n    # \"Rolling 60-second average",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1495,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 13.877,
+          "prefill_tps": 66.5,
+          "n": 400,
+          "wall_s": 30.08,
+          "sha": "785e999844a2",
+          "text": "This is a delicate task. Because you are on a **host** (not a remote attacker) and the service is on a non-standard port (8443) with an **unrecognized issuer**, there is a high probability this is a **rogue service**, a **man-in-the-middle (MITM) interception**, or a **misconfigured internal service**.\n\n**\u26a0 Safety & Ethical Warning:**\n*   **Do not** blindly trust the certificate.\n*   **Do not** inject malicious payloads into the TLS handshake unless explicitly authorized for penetration testing.\n*   **Do not** disable system-wide TLS verification.\n*   **Goal:** Identify the service silently and safely.\n\n---\n\n## \ud83e\udded Step-by-Step Methodology\n\n### Phase 1: Passive Reconnaissance & Context Gathering\n**Goal:** Understand the service\u2019s role without interacting with it.\n\n#### 1.1 Check Local Process Ownership\n```bash\nsudo lsof -i :8443\n# or\nsudo ss -tlnp | grep 8443\nsudo lsof -p <PID>\n```\n*   **Reasoning:** Identify which user owns the process. Is it `root`, `www-data`, `nginx`, `haproxy`, or an unknown user? This often reveals the daemon (e.g., `haproxy`, `nginx`, `haproxy`, `haproxy`).\n*   **Tool:** `lsof`, `ss`, `ps`\n\n#### 1.2 Check for Known Service Signatures\n```bash\nsudo lsof -p <PID> | grep -i \"exe\\|cmdline\"\n```\n*   **Reasoning:** The command line arguments often reveal the binary name and configuration files.\n\n#### 1.3 Check System Logs\n```bash\nsudo journalctl -u <service_name> --since",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 1407,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 20.77,
+          "prefill_tps": 425.5,
+          "n": 8,
+          "wall_s": 11.77,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 2.57,
+    "vram_used_mib": 2517,
+    "ram_used_gib": 26.2,
+    "vram_mib_rep0": 2547,
+    "ram_gib_rep0": 33.93,
+    "ram_peak_gib": 33.87,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

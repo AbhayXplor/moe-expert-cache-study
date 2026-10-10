@@ -1,0 +1,214 @@
+[
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 29.976,
+          "prefill_tps": 19.7,
+          "n": 128,
+          "wall_s": 7.29,
+          "sha": "3a4d98804b3f",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a slight oversimplification of the underlying physics and architecture, but it captures the **effective cost** in the context of Large Language Model (LLM) inference, specifically for **Mixture-of-Experts (MoE)** models.\n\nTo understand why this disparity exists and what it implies for MoE weight placement, we must break down the concepts of **bandwidth**, **latency**, **parallelism**, and **compute-bound vs. memory-bound operations**.\n\n---\n\n### 1. The Core",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 579,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 32.317,
+          "prefill_tps": 34.5,
+          "n": 128,
+          "wall_s": 5.87,
+          "sha": "39ad46309b70",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 percentiles and a rolling 60-second average latency.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples, where timestamp is in\n                 seconds (e.g., Unix epoch time) and latency_ms is the latency in\n                 milliseconds. The samples should be sorted by timestamp in\n                 ascending order.\n\n    Returns:\n        A dictionary with keys 'p",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 544,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 31.446,
+          "prefill_tps": 38.3,
+          "n": 128,
+          "wall_s": 6.29,
+          "sha": "e3b828583871",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Basic TLS Handshake**\n**Tool:** `openssl s_client`  \n**Command:**\n```bash\nopenssl s",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 562,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 32.032,
+          "prefill_tps": 213.7,
+          "n": 8,
+          "wall_s": 22.85,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 11.7,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 28.8,
+    "vram_mib_rep0": 3227,
+    "ram_gib_rep0": 42.78,
+    "ram_peak_gib": 45.5,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cache-2048",
+    "extra": [
+      "--cpu-moe",
+      "--moe-cache-mib",
+      "2048"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [],
+    "killed": false,
+    "error": "no /health",
+    "ram_peak_gib": 26.79,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cache-2048",
+    "extra": [
+      "--cpu-moe",
+      "--moe-cache-mib",
+      "2048"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [],
+    "killed": false,
+    "error": "no /health",
+    "ram_peak_gib": 26.79,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 30.527,
+          "prefill_tps": 19.0,
+          "n": 128,
+          "wall_s": 7.33,
+          "sha": "3a4d98804b3f",
+          "text": "The premise that reading weights from system RAM is \"roughly 80 times more expensive per byte\" than from GPU memory is a slight oversimplification of the underlying physics and architecture, but it captures the **effective cost** in the context of Large Language Model (LLM) inference, specifically for **Mixture-of-Experts (MoE)** models.\n\nTo understand why this disparity exists and what it implies for MoE weight placement, we must break down the concepts of **bandwidth**, **latency**, **parallelism**, and **compute-bound vs. memory-bound operations**.\n\n---\n\n### 1. The Core",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 579,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "code": {
+          "decode_tps": 30.914,
+          "prefill_tps": 33.9,
+          "n": 128,
+          "wall_s": 6.08,
+          "sha": "39ad46309b70",
+          "text": "```python\nimport math\nfrom typing import List, Tuple\n\n\ndef compute_latency_stats(samples: List[Tuple[float, float]]) -> dict:\n    \"\"\"\n    Compute p50, p95, p99 percentiles and a rolling 60-second average latency.\n\n    Args:\n        samples: A list of (timestamp, latency_ms) tuples, where timestamp is in\n                 seconds (e.g., Unix epoch time) and latency_ms is the latency in\n                 milliseconds. The samples should be sorted by timestamp in\n                 ascending order.\n\n    Returns:\n        A dictionary with keys 'p",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 544,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "security": {
+          "decode_tps": 34.167,
+          "prefill_tps": 44.1,
+          "n": 128,
+          "wall_s": 5.68,
+          "sha": "e3b828583871",
+          "text": "This is a structured, safe, and methodical approach to fingerprinting an unknown TLS service on TCP 8443. The goal is to identify the underlying daemon (e.g., Nginx, Apache, HAProxy, custom Go/Python service, etc.) without causing disruption or triggering security alerts unnecessarily.\n\n---\n\n### **Phase 1: Passive Reconnaissance & Initial Connection**\n**Goal:** Gather basic TLS handshake information without sending malicious payloads.\n\n#### **Step 1: Verify Connectivity and Basic TLS Handshake**\n**Tool:** `openssl s_client`  \n**Command:**\n```bash\nopenssl s",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 562,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        },
+        "longprefill": {
+          "decode_tps": 31.533,
+          "prefill_tps": 220.6,
+          "n": 8,
+          "wall_s": 22.16,
+          "sha": "ed9ba70ad2b8",
+          "text": "The transfer cost dominates the design.",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 39,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.54,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 31.41,
+    "vram_mib_rep0": 3227,
+    "ram_gib_rep0": 43.28,
+    "ram_peak_gib": 47.95,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cache-2048",
+    "extra": [
+      "--cpu-moe",
+      "--moe-cache-mib",
+      "2048"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [],
+    "killed": false,
+    "error": "no /health",
+    "ram_peak_gib": 23.59,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cache-2048",
+    "extra": [
+      "--cpu-moe",
+      "--moe-cache-mib",
+      "2048"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [],
+    "killed": false,
+    "error": "no /health",
+    "ram_peak_gib": 23.59,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

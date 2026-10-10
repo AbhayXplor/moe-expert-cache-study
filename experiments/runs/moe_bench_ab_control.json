@@ -1,0 +1,234 @@
+[
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 22.678,
+          "prefill_tps": 19.4,
+          "n": 192,
+          "wall_s": 11.44,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 26.457,
+          "prefill_tps": 33.9,
+          "n": 192,
+          "wall_s": 9.15,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 27.142,
+          "prefill_tps": 42.5,
+          "n": 192,
+          "wall_s": 9.03,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 6.65,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 30.8,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 43.13,
+    "ram_peak_gib": 43.12,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ncmoe-30",
+    "extra": [
+      "--n-cpu-moe",
+      "30"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 22.102,
+          "prefill_tps": 21.5,
+          "n": 192,
+          "wall_s": 11.37,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 27.133,
+          "prefill_tps": 39.2,
+          "n": 192,
+          "wall_s": 8.74,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 27.826,
+          "prefill_tps": 49.5,
+          "n": 192,
+          "wall_s": 8.61,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 9.64,
+    "vram_used_mib": 7849,
+    "ram_used_gib": 35.27,
+    "vram_mib_rep0": 7867,
+    "ram_gib_rep0": 45.43,
+    "ram_peak_gib": 47.55,
+    "watchdog_tripped": false,
+    "log_tail": [
+      "0.00.780.979 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 999, abort\r"
+    ]
+  },
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 19.93,
+          "prefill_tps": 17.4,
+          "n": 192,
+          "wall_s": 12.94,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 24.678,
+          "prefill_tps": 31.3,
+          "n": 192,
+          "wall_s": 9.84,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 25.397,
+          "prefill_tps": 40.4,
+          "n": 192,
+          "wall_s": 9.62,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.58,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 29.5,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 47.3,
+    "ram_peak_gib": 45.81,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ncmoe-36",
+    "extra": [
+      "--n-cpu-moe",
+      "36"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 23.662,
+          "prefill_tps": 19.7,
+          "n": 192,
+          "wall_s": 11.02,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 27.261,
+          "prefill_tps": 36.0,
+          "n": 192,
+          "wall_s": 8.83,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 27.6,
+          "prefill_tps": 45.7,
+          "n": 192,
+          "wall_s": 8.78,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 9.63,
+    "vram_used_mib": 5127,
+    "ram_used_gib": 31.41,
+    "vram_mib_rep0": 5145,
+    "ram_gib_rep0": 44.03,
+    "ram_peak_gib": 44.0,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "cpu-moe",
+    "extra": [
+      "-ot",
+      "exps=CPU"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "prompts": [
+      {
+        "prose": {
+          "decode_tps": 19.08,
+          "prefill_tps": 15.3,
+          "n": 192,
+          "wall_s": 13.82,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "code": {
+          "decode_tps": 23.091,
+          "prefill_tps": 31.0,
+          "n": 192,
+          "wall_s": 10.37,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        },
+        "security": {
+          "decode_tps": 22.682,
+          "prefill_tps": 40.9,
+          "n": 192,
+          "wall_s": 10.51,
+          "sha": "e3b0c44298fc",
+          "text": ""
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.59,
+    "vram_used_mib": 3203,
+    "ram_used_gib": 29.93,
+    "vram_mib_rep0": 3219,
+    "ram_gib_rep0": 44.78,
+    "ram_peak_gib": 46.2,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

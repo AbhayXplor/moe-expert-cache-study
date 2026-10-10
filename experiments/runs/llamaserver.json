@@ -1,0 +1,182 @@
+[
+  {
+    "config": "baseline",
+    "prompt": "freeform",
+    "decode_tps": 38.83546600960104,
+    "prefill_tps": 120.49748246331282,
+    "n": 256,
+    "draft_n": null,
+    "draft_acc": null,
+    "sha": "8d3037ee193b"
+  },
+  {
+    "config": "baseline",
+    "prompt": "copy-heavy",
+    "decode_tps": 39.74287141466699,
+    "prefill_tps": 834.7091713670203,
+    "n": 256,
+    "draft_n": null,
+    "draft_acc": null,
+    "sha": "e85d8a69a618"
+  },
+  {
+    "config": "baseline",
+    "prompt": "repetitive",
+    "decode_tps": 40.00090982461562,
+    "prefill_tps": 334.95226930162454,
+    "n": 256,
+    "draft_n": null,
+    "draft_acc": null,
+    "sha": "8fdf1197877f"
+  },
+  {
+    "config": "ngram-n12",
+    "prompt": "freeform",
+    "decode_tps": 39.761226816281145,
+    "prefill_tps": 186.74759062260313,
+    "n": 256,
+    "draft_n": null,
+    "draft_acc": null,
+    "sha": "8d3037ee193b"
+  },
+  {
+    "config": "ngram-n12",
+    "prompt": "copy-heavy",
+    "decode_tps": 41.26772509480653,
+    "prefill_tps": 836.8200836820083,
+    "n": 256,
+    "draft_n": 186,
+    "draft_acc": 30,
+    "sha": "e85d8a69a618"
+  },
+  {
+    "config": "ngram-n12",
+    "prompt": "repetitive",
+    "decode_tps": 39.79307600477517,
+    "prefill_tps": 413.58545502671757,
+    "n": 256,
+    "draft_n": 193,
+    "draft_acc": 27,
+    "sha": "179b0af22b25"
+  },
+  {
+    "config": "ngram-n6",
+    "prompt": "freeform",
+    "decode_tps": 39.4385192150652,
+    "prefill_tps": 138.38094296728278,
+    "n": 256,
+    "draft_n": null,
+    "draft_acc": null,
+    "sha": "8d3037ee193b"
+  },
+  {
+    "config": "ngram-n6",
+    "prompt": "copy-heavy",
+    "decode_tps": 45.04836339295793,
+    "prefill_tps": 868.4324793747285,
+    "n": 256,
+    "draft_n": 239,
+    "draft_acc": 75,
+    "sha": "e85d8a69a618"
+  },
+  {
+    "config": "ngram-n6",
+    "prompt": "repetitive",
+    "decode_tps": 42.68614002794854,
+    "prefill_tps": 394.436862491421,
+    "n": 256,
+    "draft_n": 396,
+    "draft_acc": 70,
+    "sha": "1419af114db1"
+  },
+  {
+    "config": "ngram-n4",
+    "prompt": "freeform",
+    "decode_tps": 37.514884582147445,
+    "prefill_tps": 144.2934516539637,
+    "n": 256,
+    "draft_n": 39,
+    "draft_acc": 1,
+    "sha": "fda19b4f8274"
+  },
+  {
+    "config": "ngram-n4",
+    "prompt": "copy-heavy",
+    "decode_tps": 47.17462826392928,
+    "prefill_tps": 812.0081678468649,
+    "n": 256,
+    "draft_n": 216,
+    "draft_acc": 94,
+    "sha": "e85d8a69a618"
+  },
+  {
+    "config": "ngram-n4",
+    "prompt": "repetitive",
+    "decode_tps": 36.394480199047834,
+    "prefill_tps": 452.88624403322376,
+    "n": 256,
+    "draft_n": 449,
+    "draft_acc": 81,
+    "sha": "179b0af22b25"
+  },
+  {
+    "config": "mapk-n4",
+    "prompt": "freeform",
+    "decode_tps": 37.933631615643954,
+    "prefill_tps": 174.17159634488465,
+    "n": 256,
+    "draft_n": 39,
+    "draft_acc": 1,
+    "sha": "fda19b4f8274"
+  },
+  {
+    "config": "mapk-n4",
+    "prompt": "copy-heavy",
+    "decode_tps": 42.65693486336231,
+    "prefill_tps": 908.3016095638817,
+    "n": 256,
+    "draft_n": 171,
+    "draft_acc": 66,
+    "sha": "e85d8a69a618"
+  },
+  {
+    "config": "mapk-n4",
+    "prompt": "repetitive",
+    "decode_tps": 37.48393703051369,
+    "prefill_tps": 489.06451739113425,
+    "n": 256,
+    "draft_n": 237,
+    "draft_acc": 83,
+    "sha": "403d4e615feb"
+  },
+  {
+    "config": "mod-m8",
+    "prompt": "freeform",
+    "decode_tps": 38.89771502618731,
+    "prefill_tps": 149.6941961421667,
+    "n": 256,
+    "draft_n": null,
+    "draft_acc": null,
+    "sha": "8d3037ee193b"
+  },
+  {
+    "config": "mod-m8",
+    "prompt": "copy-heavy",
+    "decode_tps": 42.42781614213685,
+    "prefill_tps": 733.6203083363002,
+    "n": 256,
+    "draft_n": 148,
+    "draft_acc": 56,
+    "sha": "e85d8a69a618"
+  },
+  {
+    "config": "mod-m8",
+    "prompt": "repetitive",
+    "decode_tps": 41.18079385912002,
+    "prefill_tps": 485.7717455721906,
+    "n": 256,
+    "draft_n": 173,
+    "draft_acc": 49,
+    "sha": "179b0af22b25"
+  }
+]

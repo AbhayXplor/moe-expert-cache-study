@@ -1,0 +1,188 @@
+[
+  {
+    "config": "spec-none",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "none"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-MTP-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "repeat": {
+          "decode_tps": 26.505,
+          "prefill_tps": 22.9,
+          "n": 300,
+          "wall_s": 14.01,
+          "sha": "e4633680f515",
+          "text": "[\n  {\n    \"id\": \"req_001\",\n    \"name\": \"user-auth-service\",\n    \"category\": \"authentication\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 45,\n    \"retries\": 0\n  },\n  {\n    \"id\": \"req_002\",\n    \"name\": \"payment-gateway\",\n    \"category\": \"billing\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 120,\n    \"retries\": 1\n  },\n  {\n    \"id\": \"req_003\",\n    \"name\": \"inventory-check\",\n    \"category\": \"logistics\",\n    \"status\": \"degraded\",\n    \"latency_ms\": 350,\n    \"retries\": 2\n  },\n  {\n    \"id\": \"req_004\",\n    \"name\": \"email-notifier\",\n    \"category\": \"notifications\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 89,\n    \"retries\": 0\n  },\n  {\n    \"id\": \"req_005\",\n    \"name\": \"search-indexer\",\n    \"category\": \"search\",\n    \"status\": \"healthy\",\n    \"",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 740,
+          "draft_n": 0,
+          "draft_n_accepted": 0
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.6,
+    "vram_used_mib": 3483,
+    "ram_used_gib": 28.66,
+    "vram_mib_rep0": 3499,
+    "ram_gib_rep0": 40.98,
+    "ram_peak_gib": 40.67,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ngram-simple-4",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "ngram-simple",
+      "--spec-ngram-simple-size-n",
+      "4",
+      "--spec-ngram-simple-size-m",
+      "16"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-MTP-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "repeat": {
+          "decode_tps": 14.254,
+          "prefill_tps": 22.1,
+          "n": 300,
+          "wall_s": 23.81,
+          "sha": "e4633680f515",
+          "text": "[\n  {\n    \"id\": \"req_001\",\n    \"name\": \"user-auth-service\",\n    \"category\": \"authentication\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 45,\n    \"retries\": 0\n  },\n  {\n    \"id\": \"req_002\",\n    \"name\": \"payment-gateway\",\n    \"category\": \"billing\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 120,\n    \"retries\": 1\n  },\n  {\n    \"id\": \"req_003\",\n    \"name\": \"inventory-check\",\n    \"category\": \"logistics\",\n    \"status\": \"degraded\",\n    \"latency_ms\": 350,\n    \"retries\": 2\n  },\n  {\n    \"id\": \"req_004\",\n    \"name\": \"email-notifier\",\n    \"category\": \"notifications\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 89,\n    \"retries\": 0\n  },\n  {\n    \"id\": \"req_005\",\n    \"name\": \"search-indexer\",\n    \"category\": \"search\",\n    \"status\": \"healthy\",\n    \"",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 740,
+          "draft_n": 481,
+          "draft_n_accepted": 98
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 6.58,
+    "vram_used_mib": 3483,
+    "ram_used_gib": 29.09,
+    "vram_mib_rep0": 3503,
+    "ram_gib_rep0": 42.11,
+    "ram_peak_gib": 42.09,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ngram-simple-12",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "ngram-simple",
+      "--spec-ngram-simple-size-n",
+      "12",
+      "--spec-ngram-simple-size-m",
+      "48"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-MTP-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "repeat": {
+          "decode_tps": 14.349,
+          "prefill_tps": 22.1,
+          "n": 300,
+          "wall_s": 23.65,
+          "sha": "e4633680f515",
+          "text": "[\n  {\n    \"id\": \"req_001\",\n    \"name\": \"user-auth-service\",\n    \"category\": \"authentication\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 45,\n    \"retries\": 0\n  },\n  {\n    \"id\": \"req_002\",\n    \"name\": \"payment-gateway\",\n    \"category\": \"billing\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 120,\n    \"retries\": 1\n  },\n  {\n    \"id\": \"req_003\",\n    \"name\": \"inventory-check\",\n    \"category\": \"logistics\",\n    \"status\": \"degraded\",\n    \"latency_ms\": 350,\n    \"retries\": 2\n  },\n  {\n    \"id\": \"req_004\",\n    \"name\": \"email-notifier\",\n    \"category\": \"notifications\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 89,\n    \"retries\": 0\n  },\n  {\n    \"id\": \"req_005\",\n    \"name\": \"search-indexer\",\n    \"category\": \"search\",\n    \"status\": \"healthy\",\n    \"",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 740,
+          "draft_n": 283,
+          "draft_n_accepted": 32
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 6.57,
+    "vram_used_mib": 3483,
+    "ram_used_gib": 29.12,
+    "vram_mib_rep0": 3531,
+    "ram_gib_rep0": 42.03,
+    "ram_peak_gib": 42.01,
+    "watchdog_tripped": false,
+    "log_tail": []
+  },
+  {
+    "config": "ngram-mod-8",
+    "extra": [
+      "-ot",
+      "exps=CPU",
+      "-b",
+      "2048",
+      "-ub",
+      "2048",
+      "--spec-type",
+      "ngram-mod",
+      "--spec-ngram-mod-n-match",
+      "8",
+      "--spec-ngram-mod-n-min",
+      "4",
+      "--spec-ngram-mod-n-max",
+      "16"
+    ],
+    "ctx": 32768,
+    "ub": 512,
+    "server": "C:\\Users\\abhay\\Downloads\\LLM-workspace\\.runtime\\official\\cuda\\llama-server.exe",
+    "model": "models/Qwen3.6-35B-A3B-MTP-GGUF/Qwen3.6-35B-A3B-UD-Q4_K_M.gguf",
+    "prompts": [
+      {
+        "repeat": {
+          "decode_tps": 13.499,
+          "prefill_tps": 21.8,
+          "n": 300,
+          "wall_s": 25.0,
+          "sha": "e4633680f515",
+          "text": "[\n  {\n    \"id\": \"req_001\",\n    \"name\": \"user-auth-service\",\n    \"category\": \"authentication\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 45,\n    \"retries\": 0\n  },\n  {\n    \"id\": \"req_002\",\n    \"name\": \"payment-gateway\",\n    \"category\": \"billing\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 120,\n    \"retries\": 1\n  },\n  {\n    \"id\": \"req_003\",\n    \"name\": \"inventory-check\",\n    \"category\": \"logistics\",\n    \"status\": \"degraded\",\n    \"latency_ms\": 350,\n    \"retries\": 2\n  },\n  {\n    \"id\": \"req_004\",\n    \"name\": \"email-notifier\",\n    \"category\": \"notifications\",\n    \"status\": \"healthy\",\n    \"latency_ms\": 89,\n    \"retries\": 0\n  },\n  {\n    \"id\": \"req_005\",\n    \"name\": \"search-indexer\",\n    \"category\": \"search\",\n    \"status\": \"healthy\",\n    \"",
+          "reasoning": "",
+          "thinking_chars": 0,
+          "answer_chars": 740,
+          "draft_n": 163,
+          "draft_n_accepted": 59
+        }
+      }
+    ],
+    "killed": false,
+    "load_s": 5.56,
+    "vram_used_mib": 3483,
+    "ram_used_gib": 28.76,
+    "vram_mib_rep0": 3501,
+    "ram_gib_rep0": 41.75,
+    "ram_peak_gib": 41.74,
+    "watchdog_tripped": false,
+    "log_tail": []
+  }
+]

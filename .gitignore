@@ -1,0 +1,26 @@
+# Model weights (tens of GB, re-downloadable). Exact files listed in README.md
+models/
+
+# Python environments and bytecode
+.venv/
+__pycache__/
+*.pyc
+
+# Hugging Face cache
+.hf_home/
+
+# Local llama.cpp builds and scratch output (prebuilt binaries, ~2.4 GB)
+.runtime/
+
+# Third-party repositories cloned during earlier experiments
+repos/
+
+# Raw server logs and download logs (regenerable; structured results are in
+# experiments/runs/*.json and carry the relevant log tail)
+experiments/logs/
+*.log
+
+# Agent and editor state
+.freebuff/
+.vscode/
+.idea/
